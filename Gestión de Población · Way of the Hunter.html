@@ -55,6 +55,11 @@ p.hint{margin:6px 0;font-size:12px;color:var(--mu)}.fb label{font-size:12px;disp
 .ic-s{width:1.4em;height:1.4em;vertical-align:-.32em}
 #na .qr>b{flex:0 0 98px;white-space:nowrap}
 #hp .qr{display:flex;flex-wrap:nowrap;gap:6px;align-items:center;margin:0 0 8px}#hp .qr>b{flex:0 0 98px;font-size:12px;white-space:nowrap}#hp .qb{flex:1 1 0;min-width:0;padding:9px 4px;font-size:14px;white-space:nowrap}#hp .qb:disabled{background:#c9d1cc;color:#7a8780;cursor:not-allowed}
+#fo .qr.c2,#fo .qr.c3,#fo .qr.c5,#fo .qr.ct{display:grid;width:100%;gap:8px}#fo .qr.c2{grid-template-columns:repeat(2,1fr)}#fo .qr.c3{grid-template-columns:repeat(3,1fr)}#fo .qr.c5{grid-template-columns:repeat(5,1fr)}#fo .qr.ct{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+#fo .qr.c2 .qb,#fo .qr.c3 .qb,#fo .qr.c5 .qb,#fo .qr.ct .qb{min-width:0;width:100%;padding:11px 6px;font-size:15px;line-height:1.2;white-space:normal;text-align:center}#fo .qr.c5 .qb{padding:11px 2px}
+@media(max-width:700px){#fo .fr,#st .fr{grid-template-columns:1fr;gap:4px}#fo .qr.c5 .qb{font-size:14px}#fo .qr.ct{grid-template-columns:repeat(2,1fr)}}
+@media (pointer:coarse){#fo,#st{padding-top:calc(env(safe-area-inset-top,0px) + 104px)}#hp{padding-top:calc(env(safe-area-inset-top,0px) + 96px)}}
+.mfa{border-top:1px solid var(--br);margin-top:8px;padding-top:8px}.mfa .g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:6px;margin:4px 0 6px}.stp{display:flex;align-items:center;justify-content:space-between;gap:6px;border:1px solid var(--br);border-radius:10px;padding:5px 8px;font-size:13px}.stp>span{line-height:1.15}.stp>div{display:flex;align-items:center;gap:6px}.stp button{width:28px;height:28px;padding:0;border-radius:8px}.stp b{min-width:18px;text-align:center}.stp.on{border-color:var(--or);background:rgba(230,126,34,.1)}
 @media(max-width:1100px){
 #tm{display:block}#tm tbody{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#tm tr:first-child{display:none}
 #tm tr{display:grid;grid-template-columns:1fr auto;gap:6px 8px;border:1px solid var(--br);border-radius:12px;padding:10px 12px;margin:0;background:var(--cd,transparent)}
@@ -241,6 +246,8 @@ function newId(mp,rg,rl,keep){if(!REG[mp]||!rg){let n=S.h.filter(x=>x.mp==mp).le
 function idEdit(h,rg,rl){const pre=REG[h.mp]&&rg?h.mp+'-'+rg+'-':h.mp+'-M',m=h.id.match(new RegExp('^'+pre+'(\\d+)'));return m?pre+m[1]+(rl||''):newId(h.mp,rg,rl,h)}
 function renId(o,n){if(o==n)return;S.a.forEach(a=>{if(a.h==o)a.h=n});S.x.forEach(x=>{if(x.h==o)x.h=n});(S.hist||[]).forEach(x=>{if(x.h==o)x.h=n});if(S.sel==o)S.sel=n;if(OP==o)OP=n}
 const nxtp=nxt;
+const am=k=>k[0]=='H'?{sx:'H',ed:k[1],st:0}:k=='MJ'?{sx:'M',ed:'J',st:1}:{sx:'M',ed:k[1],st:+k[2]},aK=a=>a.sx=='H'?'H'+a.ed:a.ed=='J'?'MJ':'M'+a.ed+a.st,
+GRP=[['Hembras',[['HJ','Joven'],['HA','Adulta'],['HM','Madura']]],['Machos jóvenes (1★)',[['MJ','Joven']]],['Machos adultos',[['MA1','1★'],['MA2','2★'],['MA3','3★']]],['Machos maduros',[['MM1','1★'],['MM2','2★'],['MM3','3★'],['MM4','4★'],['MM5','5★']]]];
 function mfDlg(i){const ed=i!=null,h=ed?S.h[i]:{sp:SP[0],mp:S.act},mp=h.mp,R0=REG[mp],e=$('st'),q2=v=>String(v==null?'':v).replace(/"/g,'&quot;');e.hidden=false;
  e.innerHTML=`<div class="c fw" style="max-width:600px"><h2>${ed?'Editar manada · '+h.id:'Nueva manada'}</h2><div class="fr"><span class="lb">Especie</span><select id="mf_s">${gopts(h.sp)}</select></div>
  <div class="fr"><span class="lb">Región</span>${R0?`<select id="mf_r"><option value="">Elige región…</option>${R0.map(r=>`<option value="${r[0]}" ${h.rg==r[0]?'selected':''}>${r[1]} (${r[0]})${r[3]?' · coto':''}</option>`).join('')}</select>`:`<input id="mf_r" value="${q2(h.sec)}" placeholder="Región o sector" style="width:100%">`}</div>
@@ -248,20 +255,24 @@ function mfDlg(i){const ed=i!=null,h=ed?S.h[i]:{sp:SP[0],mp:S.act},mp=h.mp,R0=RE
  <div class="fr"><span class="lb">Relación</span><select id="mf_l"></select></div>
  <div class="fr"><span class="lb">Rango del hábitat</span><div><input type="number" id="mf_a" min="0" max="100" style="width:70px"> – <input type="number" id="mf_b" min="0" max="100" style="width:70px"> %<div class="hint">Mínimo y máximo de genética que muestra el mapa del juego para esta especie en este hábitat. Acota la horquilla de todos sus machos.</div></div></div>
  <div class="fr"><span class="lb">Zona (opcional)</span><input id="mf_z" value="${q2(h.zn)}" placeholder="Ej. pantano norte, junto a la cabaña" style="width:100%"></div>
+ <div class="mfa"><b class="pt" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)">Animales ${ed?'a añadir':'(opcional)'}</b><p class="hint" style="margin:2px 0 6px">${ed?'Se suman a los que ya tiene la manada; para quitar alguno usa la ✕ de su fila.':'Si ya los conoces, suma aquí los de la manada; luego se pueden editar.'}</p>${GRP.map(([t,L])=>`<div class="hint" style="margin-top:4px"><b>${t}</b></div><div class="g3">${L.map(([k,l])=>`<div class="stp" id="stp_${k}"><span>${k[0]=='H'?'♀ ':''}${l}${ed?` <span class="hint">· hay ${S.a.filter(a=>a.h==h.id&&aK(a)==k).length}</span>`:''}</span><div><button class="g" data-stp="${k}" data-d="-1" type="button">−</button><b id="n_${k}">0</b><button class="g" data-stp="${k}" data-d="1" type="button">+</button></div></div>`).join('')}</div>`).join('')}<p class="hint" id="mf_tot" style="font-weight:600;margin:4px 0 0"></p></div>
  <p class="hint" id="mf_i" style="font-weight:600"></p><p class="hint" id="mf_e" style="color:#b03a12"></p><div class="bar" style="justify-content:flex-end"><button class="g" id="mf_n">Cancelar</button><button id="mf_k">${ed?'Guardar':'Crear'}</button></div></div>`;
- const g=id=>$(id),rs=g('mf_r'),hs=g('mf_h'),ls=g('mf_l'),a1=g('mf_a'),b1=g('mf_b'),pv=c=>R0&&c?(R0.find(r=>r[0]==c)||[])[3]:0,
+ const add={},g=id=>$(id),rs=g('mf_r'),hs=g('mf_h'),ls=g('mf_l'),a1=g('mf_a'),b1=g('mf_b'),pv=c=>R0&&c?(R0.find(r=>r[0]==c)||[])[3]:0,
  cur=()=>({mp,sp:g('mf_s').value,rg:R0?rs.value:'',sec:R0?'':rs.value.trim(),hb:hs.value,rl:ls.value}),
  pp={v:!!pv(h.rg)},fillL=init=>{const pr=!!pv(R0?rs.value:'');if(!ls.options.length)ls.innerHTML=['P','S','C'].map(k=>`<option value="${k}">${RL[k]} (${k})${k=='C'?' · mínimo 50 %':''}</option>`).join('');if(init)ls.value=h.rl||(pr?'C':'P');else if(pr!==pp.v)ls.value=pr?'C':(ls.value=='C'?'P':ls.value);pp.v=pr},
  fillR=()=>{const k=cur(),v=(S.rng||{})[rk(k)+'|'+k.hb]||RNG[k.rl]||[0,100];a1.value=v[0];b1.value=v[1]},
  fillI=()=>{const k=cur();g('mf_i').textContent='ID: '+(ed?idEdit(h,k.rg,k.rl):newId(mp,k.rg,k.rl))},
  fillH=()=>{const r=R0&&R0.find(x=>x[0]==rs.value);g('mf_hh').textContent=r?'Hábitat habitual de la región: '+HB[r[2]]+' ('+r[2]+'). Puede haber otros.':''};
  fillL(true);fillR();fillI();fillH();
+ e.querySelectorAll('[data-stp]').forEach(bt=>bt.onclick=()=>{const k=bt.dataset.stp;add[k]=Math.max(0,(add[k]||0)+ +bt.dataset.d);g('n_'+k).textContent=add[k];g('stp_'+k).classList.toggle('on',add[k]>0);const t=Object.values(add).reduce((a,b)=>a+b,0);g('mf_tot').textContent=t?'Se añadirán '+t+' animales':''});
  rs.onchange=()=>{fillL();fillR();fillI();fillH()};hs.onchange=()=>{fillR();fillI()};ls.onchange=()=>{fillR();fillI()};g('mf_s').onchange=()=>{fillR();fillI()};if(!R0)rs.oninput=fillI;
  g('mf_n').onclick=()=>e.hidden=true;
  g('mf_k').onclick=()=>{const k=cur(),mn=+a1.value,mx=+b1.value,er=g('mf_e');if(R0&&(!k.rg||!k.hb)){er.textContent='Elige región y hábitat.';return}if(!(mn>=0&&mx<=100&&mn<mx)){er.textContent='El rango va de 0 a 100 y el mínimo debe ser menor que el máximo.';return}
+  const nAdd=Object.values(add).reduce((a,b)=>a+b,0),cur0=ed?S.a.filter(a=>a.h==h.id).length:0;if(cur0+nAdd>CFG.max){er.textContent='Con esos animales la manada superaría el máximo ('+CFG.max+').';return}
   const r=R0&&R0.find(x=>x[0]==k.rg),v={sp:k.sp,hb:k.hb,rl:k.rl,zn:g('mf_z').value.trim(),sec:r?r[1]:k.sec};snap();let o;
   if(!ed){o={id:newId(mp,k.rg,k.rl),mp,ly:yr(S.maps[mp]),...v};if(k.rg)o.rg=k.rg;S.h.push(o);toast('Manada añadida: '+o.id)}
   else{o=S.h[i];const old=o.id;Object.assign(o,v);if(k.rg)o.rg=k.rg;else delete o.rg;const nid=idEdit(o,k.rg,k.rl);renId(old,nid);o.id=nid;toast('Manada actualizada: '+nid)}
+  Object.entries(add).forEach(([k,n])=>{for(let c=0;c<n;c++)S.a.push({h:o.id,...am(k)})});
   S.rng=S.rng||{};const key=rk(o)+'|'+o.hb,d0=RNG[o.rl]||[0,100];if(mn==d0[0]&&mx==d0[1])delete S.rng[key];else S.rng[key]=[mn,mx];sv();e.hidden=true;render()}}
 function dlg(msg,def){return new Promise(res=>{const e=$('dg');e.hidden=false;e.innerHTML=`<div class="c fw" style="max-width:460px"><p>${msg}</p>${def!==undefined?`<input id="di" style="width:100%" value="${String(def).replace(/"/g,'&quot;')}">`:''}<div class="bar" style="justify-content:flex-end"><button class="g" id="dn">Cancelar</button><button id="dk">Aceptar</button></div></div>`;const f=$('di');if(f)f.focus();const end=v=>{e.hidden=true;e.innerHTML='';res(v)};$('dn').onclick=()=>end(null);$('dk').onclick=()=>end(f?f.value:true)})}
 const snap=()=>{U=JSON.stringify(S)},toast=m=>{$('ts').innerHTML=`${m} <button class="g" data-undo>↩ Deshacer</button>`;$('ts').hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>$('ts').hidden=true,8000)};
@@ -288,7 +299,7 @@ function render(){const m=S.act,cy=yr(S.maps[m]),f=$('fs').value,HM=S.h.filter(h
  const xM=$('xM').value,xT=$('xT').value,xA=$('xA').value,xD=$('xD').value,XL=S.x.map((x,i)=>[x,i]).filter(([x])=>x.mp==m&&(!f||x.sp==f)&&(!xM||x.h==xM)&&(!xT||x.ty==xT)&&(!xD||(x.d!=null&&x.d>=+xD))&&(!xA||(xA[0]=='✅'?x.ok===true:x.ok===false)));
  $('xN').textContent=XL.length+' de '+X.length+' extracciones';
  $('tx').innerHTML='<tr>'+sth('tx','d','Fecha')+sth('tx','h','Manada')+sth('tx','sp','Especie')+sth('tx','sec','Sector')+sth('tx','sx','Sexo')+sth('tx','ed','Edad')+sth('tx','st','★')+sth('tx','ge','% Gen.')+sth('tx','ty','Tipo')+sth('tx','ok','Acierto')+sth('tx','nt','Notas')+'<th></tr>'+tsort(XL,'tx').map(([x,i])=>{const h=S.h.find(h=>h.id==x.h),bad=h&&h.sp!==x.sp;
-  return`<tr><td>${dayCtl('x:'+i,x.d)}<td class="l">${x.h}<td class="l" ${bad?'style="background:var(--bad)" title="La especie no coincide con la de la manada"':''}>${x.sp||''}<td class="l">${x.sec||''}<td>${sx(x.sx)}<td>${AGE[x.ed]||''}<td>${x.sx=='H'?'—':x.st}<td>${x.ge!=null?x.ge+'%':''}<td class="l">${x.ty}<td>${x.ok==null?'—':x.ok?'✅':'⚠ Revisar'}<td class="l">${x.nt||''}<td style="white-space:nowrap"><button class="g" data-ex2="${i}" title="Editar extracción">✎</button> <button class="x" data-dx="${i}">✕</button></tr>`}).join('');
+  return`<tr><td style="white-space:nowrap">${x.d==null?'Sin fecha':'Año '+yr(x.d)+' · día '+dd(x.d)}<td class="l">${x.h}<td class="l" ${bad?'style="background:var(--bad)" title="La especie no coincide con la de la manada"':''}>${x.sp||''}<td class="l">${x.sec||''}<td>${sx(x.sx)}<td>${AGE[x.ed]||''}<td>${x.sx=='H'?'—':x.st}<td>${x.ge!=null?x.ge+'%':''}<td class="l">${x.ty}<td>${x.ok==null?'—':x.ok?'✅':'⚠ Revisar'}<td class="l">${x.nt||''}<td style="white-space:nowrap"><button class="g" data-ex2="${i}" title="Editar extracción">✎</button> <button class="x" data-dx="${i}">✕</button></tr>`}).join('');
   addRow(HM);panel(cy)}
 /* ---------- añadir desde Todos los animales ---------- */
 function addRow(HM){const e=$('na'),aM=$('aM').value;if(!HM.some(h=>h.id==qa.h))qa.h=aM||'';const c=HM.find(h=>h.id==qa.h),full=c&&S.a.filter(a=>a.h==c.id).length>=CFG.max,dis=!c||full?'disabled':'',
@@ -346,15 +357,15 @@ function fpOpen(p){const h=S.h.find(h=>h.id==p.h);w={d:S.maps[S.act],h:p.h||(S.h
 function fpEdit(i){const x=S.x[i];w={d:x.d??1,h:x.h,sp:x.sp,sec:x.sec||'',sx:x.sx,ed:x.ed,st:x.st||null,ge:x.ge==null?'':x.ge,ty:x.ty,nt:x.nt||'',rm:false,ai:null,ei:i,err:''};fp()}
 function fp(){const e=$('fo');if(!w){e.hidden=true;return}e.hidden=false;const HM=S.h.filter(h=>h.mp==S.act),ctl=w.h&&w.h!='Otros',
  chs=(a,k)=>a.map(([v,t])=>`<button class="qb ${String(w[k])===String(v)?'on':''}" data-w="${k}" data-v="${v}">${t}</button>`).join(' '),
- row=(l,b)=>`<div class="fr"><span class="lb">${l}</span><div class="qr" style="margin:0">${b}</div></div>`,
+ row=(l,b,c)=>`<div class="fr"><span class="lb">${l}</span><div class="qr ${c||''}" style="margin:0">${b}</div></div>`,
  sm=[`Año ${yr(+w.d||1)} · día ${dd(w.d)}`,w.h=='Otros'?'Otra manada':w.h,w.sx?(w.sx=='H'?'Hembra':'Macho'):'',AGE[w.ed]||'',w.sx=='M'&&w.st?w.st+'★':'',w.ge!==''?w.ge+'%':'',w.ty].filter(Boolean).join(' · ');
  e.innerHTML=`<div class="c fw"><h2>🎯 ${w.ei!=null?'Editar pieza':'Nueva pieza'}</h2>`+row('Fecha',dayCtl('fp',w.d))
- +row('Manada',chs(HM.map(h=>[h.id,h.id+' · '+h.sp]).concat([['Otros','Otra (no controlada)']]),'h'))
+ +row('Manada',`<select data-f="h" ${w.h=='Otros'?'disabled':''} style="flex:1 1 220px;min-width:0"><option value="">Elige manada…</option>${HM.map(h=>`<option value="${h.id}" ${w.h==h.id?'selected':''}>${h.id} · ${h.sp}</option>`).join('')}</select><button class="qb ${w.h=='Otros'?'on':''}" data-wo style="flex:0 0 auto">Otra (no controlada)</button>`)
  +(w.h=='Otros'?row('Sector y especie',`<input data-f="sec" placeholder="Sector" value="${w.sec}"><select data-f="sp">${gopts(w.sp)}</select>`):'')
- +row('Sexo',chs([['M','♂ Macho'],['H','♀ Hembra']],'sx'))+row('Edad',chs([['J','Joven'],['A','Adulto'],['M','Maduro']],'ed'))
- +(w.sx=='H'?'':row('Estrellas',chs([1,2,3,4,5].map(n=>[n,n+'★']),'st')))
+ +row('Sexo',chs([['M','♂ Macho'],['H','♀ Hembra']],'sx'),'c2')+row('Edad',chs([['J','Joven'],['A','Adulto'],['M','Maduro']],'ed'),'c3')
+ +(w.sx=='H'?'':row('Estrellas',chs([1,2,3,4,5].map(n=>[n,n+'★']),'st'),'c5'))
  +row('% de genética',`<input type="number" min="0" max="100" data-f="ge" value="${w.ge}" style="width:90px"><span class="hint">Se ve al reclamar; puedes dejarlo vacío</span>`)
- +row('Tipo de extracción',chs(TI.map(t=>[t,t]),'ty'))
+ +row('Tipo de extracción',chs(TI.map(t=>[t,t]),'ty'),'ct')
  +row('Nota',`<input data-f="nt" value="${String(w.nt).replace(/"/g,'&quot;')}" style="width:100%" placeholder="Opcional">`)
  +(ctl&&w.ai==null&&w.ei==null?`<label class="hint"><input type="checkbox" data-f="rm" ${w.rm?'checked':''}> Quitar de la manada</label>`:'')
  +`<p class="hint" style="color:#b03a12">${w.err}</p><div class="bar"><span class="hint" style="flex:1">${sm}</span><button class="g" data-fc>Cancelar</button><button data-fs>Guardar pieza</button></div></div>`}
@@ -387,6 +398,7 @@ document.addEventListener('click',e=>{const t=e.target,b=t.closest('button'),d=b
  if(d.pc!==undefined){OP=null;render()}
  if(d.undo!==undefined){S=JSON.parse(U);sv();$('ts').hidden=true;render()}
  if(d.w!==undefined&&w){const k=d.w,v=d.v;w[k]=k=='st'?+v:v;if(k=='sx'&&v=='H')w.st=0;if(k=='h'){const h=S.h.find(h=>h.id==v);if(h)w.sp=h.sp}w.err='';fp()}
+ if(d.wo!==undefined&&w){w.h=w.h=='Otros'?null:'Otros';fp()}
  if(d.dcm!==undefined)daySet(d.dcm,(+dayGet(d.dcm)||1)-1);
  if(d.dcp!==undefined)daySet(d.dcp,(+dayGet(d.dcp)||0)+1);
  if(d.dcv!==undefined)dayPop(b,d.dcv);
@@ -401,7 +413,7 @@ document.addEventListener('change',e=>{const t=e.target,d=t.dataset;
  if(d.pf!==undefined){PF[d.pf]=t.value;render()}
  if(d.ps!==undefined){PS={sort:t.value,first:null};render()}
  if(d.ah!==undefined){qa={h:t.value,s:'',e:'',t:''};render()}
- if(d.f&&w){w[d.f]=t.type=='checkbox'?t.checked:t.value;if(d.f=='d'||d.f=='sp')fp()}});
+ if(d.f&&w){w[d.f]=t.type=='checkbox'?t.checked:t.value;if(d.f=='d'||d.f=='sp'||d.f=='h')fp()}});
 document.addEventListener('input',e=>{const t=e.target;if(t.id=='pn')nota=t.value;if(t.id=='an')nota2=t.value;if(t.dataset.f&&w&&t.type!='checkbox')w[t.dataset.f]=t.value});
 document.addEventListener('keydown',e=>{if(e.key=='Escape'){if(!$('st').hidden){$('st').hidden=true;return}if(!$('hl').hidden){$('hl').hidden=true;return}if(w){w=null;fp()}else if(OP){OP=null;render()}}});
 ['mE','mR','mQ','aM','aS','aE','aT','aA','xM','xT','xA','xD','fs'].forEach(i=>{$(i).onchange=render;$(i).oninput=render});
