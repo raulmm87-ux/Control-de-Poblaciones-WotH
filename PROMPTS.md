@@ -1,6 +1,12 @@
 # Prompts reutilizables para ChatGPT y Claude
 
-Usar solo el prompt que corresponda a la fase actual. Sustituir los campos entre corchetes y evitar pegar el historial completo.
+Usar solo el prompt que corresponda a la fase actual. Sustituir los campos entre corchetes y evitar pegar el historial completo. Para elegir fase y asistente, consultar `VENTANILLA_IA.md`.
+
+## 0. Clasificar una petición (para el asistente que la recibe)
+
+> Antes de trabajar en esta petición de desarrollo, clasifícala según `VENTANILLA_IA.md`: ventanilla correcta aquí, mejor en el otro asistente, trabajo coordinado o falta un dato clave.
+>
+> Dime en breve por qué y cuál es el siguiente paso. Si debo acudir al otro asistente, prepara un mensaje listo para copiar con el contexto mínimo. Si puedo continuar aquí, sigue con la tarea. No me hagas repetir información que ya está en la documentación del proyecto.
 
 ## 1. Definir tarea en ChatGPT
 
@@ -12,7 +18,7 @@ Usar solo el prompt que corresponda a la fase actual. Sustituir los campos entre
 
 ## 2. Análisis inicial en Claude web
 
-> Trabaja sobre el código actual del repositorio seleccionado y sigue `PROJECT.md`, `ARCHITECTURE.md`, `TASKS.md` y `AI_WORKFLOW.md`.
+> Trabaja sobre el código actual del repositorio seleccionado y sigue `VENTANILLA_IA.md`, `PROJECT.md`, `ARCHITECTURE.md`, `TASKS.md` y `AI_WORKFLOW.md`.
 >
 > Objetivo: [objetivo].
 > Debe permanecer intacto: [restricciones].
