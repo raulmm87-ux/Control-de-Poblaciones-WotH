@@ -1,6 +1,12 @@
 # Prompts reutilizables para ChatGPT y Claude
 
-Usar solo el prompt que corresponda a la fase actual. Sustituir los campos entre corchetes y evitar pegar el historial completo.
+Usar solo el prompt que corresponda a la fase actual. Sustituir los campos entre corchetes y evitar pegar el historial completo. Para elegir fase y asistente, consultar `VENTANILLA_IA.md`.
+
+## 0. Clasificar una petición (para el asistente que la recibe)
+
+> Antes de trabajar en esta petición de desarrollo, clasifícala según `VENTANILLA_IA.md`: ventanilla correcta aquí, mejor en el otro asistente, trabajo coordinado o falta un dato clave.
+>
+> Dime en breve por qué y cuál es el siguiente paso. Si debo acudir al otro asistente, prepara un mensaje listo para copiar con el contexto mínimo. Si puedo continuar aquí, sigue con la tarea. No me hagas repetir información que ya está en la documentación del proyecto.
 
 ## 1. Definir tarea en ChatGPT
 
@@ -12,7 +18,7 @@ Usar solo el prompt que corresponda a la fase actual. Sustituir los campos entre
 
 ## 2. Análisis inicial en Claude web
 
-> Trabaja sobre el código actual del repositorio seleccionado y sigue `PROJECT.md`, `ARCHITECTURE.md`, `TASKS.md` y `AI_WORKFLOW.md`.
+> Trabaja sobre el código actual del repositorio seleccionado y sigue `VENTANILLA_IA.md`, `PROJECT.md`, `ARCHITECTURE.md`, `TASKS.md` y `AI_WORKFLOW.md`.
 >
 > Objetivo: [objetivo].
 > Debe permanecer intacto: [restricciones].
@@ -22,21 +28,25 @@ Usar solo el prompt que corresponda a la fase actual. Sustituir los campos entre
 
 ## 3. Implementar en Claude web
 
-> Implementa únicamente el cambio aprobado: [resumen del cambio].
+> Actúa como ingeniero principal e implementa únicamente el cambio aprobado: [resumen del cambio].
 >
 > Parte de esta versión: [rama/commit o indicación de que se ha sincronizado GitHub].
 > No cambies ninguna otra funcionalidad, regla, texto ni estilo que no sea necesario.
 >
+> Si la integración permite escribir en GitHub, trabaja en una rama dedicada y abre un PR cuando sea posible; no modifiques `main` directamente. Si solo tienes acceso de lectura, devuelve el diff o instrucciones exactas, sin afirmar que has guardado cambios.
+>
 > Devuelve:
 > 1. archivos afectados;
-> 2. un diff o instrucciones de edición exactas, con suficiente contexto para identificar el lugar;
-> 3. explicación breve de por qué el cambio cumple los criterios;
-> 4. pruebas realizadas y no realizadas;
+> 2. diff o enlace al PR/commit, según corresponda;
+> 3. explicación breve de cómo cumple los criterios;
+> 4. pruebas ejecutadas realmente y pruebas pendientes;
 > 5. riesgos o dudas pendientes.
 >
-> No afirmes que el código se ha guardado en GitHub a menos que lo hayas hecho realmente y puedas identificar el commit. Si necesitas reescribir un archivo completo por una limitación técnica, avísame primero.
+> Si necesitas reescribir un archivo completo por una limitación técnica, avísame primero.
 
 ## 4. Revisar propuesta de Claude en ChatGPT
+
+Este paso es obligatorio para cambios de alto riesgo (cálculos/reglas de negocio, persistencia, migraciones, seguridad, integraciones externas o arquitectura) y opcional para cambios pequeños y reversibles.
 
 > Revisa la propuesta de Claude para la tarea [nombre]. Comprueba que cumple el objetivo y las restricciones del brief. Busca errores lógicos, efectos secundarios, cambios no solicitados, incompatibilidades con datos existentes, problemas de seguridad y pruebas ausentes.
 >
