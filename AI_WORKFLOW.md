@@ -6,8 +6,9 @@ Este protocolo puede copiarse a otros proyectos. Está pensado para trabajar con
 
 ## Roles
 
-- **ChatGPT — coordinación, definición y revisión:** aclara el objetivo, divide el trabajo, define criterios de aceptación, revisa propuestas y puede aplicar cambios autorizados al repositorio cuando la conexión de GitHub lo permita.
-- **Claude web — análisis e implementación:** estudia el código relevante y propone una solución concreta. No debe asumir que puede escribir directamente en GitHub: la integración puede servir solo para proporcionar contexto.
+- **ChatGPT — arquitecto y coordinador:** convierte la idea en requisitos, define arquitectura y reglas de negocio, decide criterios de aceptación, prepara pruebas y realiza una revisión independiente cuando aporte valor. Puede modificar GitHub si tiene escritura autorizada.
+- **Claude web — ingeniero principal e implementador:** inspecciona el código, resuelve los detalles técnicos e implementa cambios acotados, depura y analiza rendimiento. Puede crear commits/PR solo si la integración activa permite realmente escribir; el acceso de lectura no implica escritura.
+- **Revisión cruzada — selectiva:** en cambios pequeños y reversibles puede bastar una implementación y una comprobación básica. En cálculos, persistencia, migraciones, seguridad o arquitectura, otra IA debe revisar el cambio antes de aceptarlo; el autor no será el único revisor.
 - **GitHub — fuente de verdad:** conserva el código, la documentación y el historial de commits. Una respuesta de IA no se considera incorporada hasta que está guardada en el repositorio.
 - **Usuario — propietario y verificación final:** decide qué comportamiento quiere, aprueba cambios importantes y ejecuta las pruebas reales de la aplicación cuando no haya un entorno de pruebas disponible.
 
