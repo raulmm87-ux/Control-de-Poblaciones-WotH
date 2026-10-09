@@ -19,27 +19,27 @@ No hace falta mostrar esta clasificación para preguntas triviales o ajenas al p
 
 ## Reparto de funciones
 
-### ChatGPT: coordinación, definición y revisión
+### ChatGPT: arquitecto, coordinador y revisor independiente
 Usar preferentemente para:
-- convertir una idea general en un objetivo concreto;
-- decidir alcance, prioridades y criterios de aceptación;
-- explicar opciones y sus ventajas/inconvenientes;
-- revisar el análisis o código propuesto por Claude;
-- detectar cambios no solicitados, errores lógicos, riesgos de datos y casos límite;
-- preparar pruebas y decidir si el resultado está suficientemente verificado;
-- actualizar GitHub cuando las herramientas disponibles lo permitan y el usuario haya autorizado el cambio.
+- convertir una idea en requisitos y decisiones concretas;
+- definir arquitectura, modelo de datos, reglas de negocio y criterios de aceptación antes de programar;
+- comparar alternativas y anticipar riesgos, costes y efectos sobre el producto;
+- preparar briefs técnicos, planes de trabajo y pruebas;
+- revisar de forma independiente los cambios de Claude cuando el riesgo lo justifique;
+- comprobar que la implementación respeta el objetivo y no altera partes ajenas;
+- aplicar cambios en GitHub cuando las herramientas disponibles lo permitan y el usuario haya autorizado el cambio.
 
-ChatGPT también puede resolver tareas pequeñas directamente si es más eficiente. No debe derivar una tarea solo por seguir un reparto rígido.
+ChatGPT puede implementar una tarea pequeña si resulta más eficiente o si Claude no es la ventanilla adecuada. No debe derivar por rutina ni duplicar todo el trabajo de Claude.
 
-### Claude web: análisis del código e implementación
+### Claude web: ingeniero principal e implementador
 Usar preferentemente para:
 - inspeccionar el código actual y explicar cómo funciona;
-- localizar funciones, eventos, estilos y dependencias;
-- proponer e implementar cambios acotados;
-- preparar diffs o instrucciones de edición precisas;
-- corregir errores de código con pasos de reproducción claros.
+- decidir los detalles técnicos de implementación dentro de la arquitectura acordada;
+- implementar funciones, cambios visuales, depuración y refactorizaciones acotadas;
+- analizar rendimiento y preparar o ejecutar pruebas cuando la integración lo permita;
+- proponer diffs, commits o pull requests si la herramienta conectada realmente lo permite.
 
-Claude debe confirmar qué versión del código está viendo. No debe afirmar que ha actualizado GitHub si no puede confirmar el commit.
+Claude debe confirmar qué versión del código está viendo. Tener acceso de lectura al repositorio no significa tener permiso de escritura. No debe afirmar que ha actualizado GitHub ni que ha ejecutado pruebas si no puede confirmar el commit o el resultado real.
 
 ### Trabajo coordinado: ambos
 Coordinar ambas IAs cuando la petición:
@@ -50,7 +50,7 @@ Coordinar ambas IAs cuando la petición:
 - introduce seguridad, sincronización, importación/exportación, servicios externos o costes;
 - es una refactorización amplia o un cambio difícil de revertir.
 
-Flujo recomendado: ChatGPT define el brief y las pruebas → Claude inspecciona e implementa → ChatGPT revisa la propuesta → se aplica a una rama → el usuario prueba la aplicación → se registra el resultado.
+Flujo recomendado: ChatGPT define requisitos, arquitectura y criterios → Claude inspecciona e implementa → se revisa el cambio de forma proporcional al riesgo (ChatGPT revisa a Claude; Claude puede revisar decisiones o código de ChatGPT si aporta valor) → se guarda en una rama → el usuario prueba la aplicación → se registra el resultado. El autor del cambio no debe ser el único revisor en cambios de alto riesgo.
 
 No pedir a ambas IAs que hagan desde cero el mismo trabajo. Repartir fases para evitar duplicar coste y obtener respuestas contradictorias.
 
@@ -65,8 +65,8 @@ No pedir a ambas IAs que hagan desde cero el mismo trabajo. Repartir fases para 
 | Cambio de datos guardados, migración o persistencia | Coordinado | Brief y riesgos con ChatGPT; implementación con Claude; pruebas específicas |
 | Cambio visual pequeño y aislado | Claude | Respetar el diseño existente y no tocar lógica ajena |
 | Rediseño amplio o cambio de arquitectura | Coordinado | Comparar alternativas antes de implementar |
-| Revisar código que Claude ya ha propuesto | ChatGPT | Revisar sin rehacer todo; señalar fallos concretos y correcciones |
-| Aplicar un cambio revisado al repositorio | ChatGPT si tiene acceso de escritura, o integración autorizada | Leer la versión actual, trabajar en rama y confirmar commit |
+| Revisar código que Claude ya ha propuesto | ChatGPT, cuando el riesgo lo justifique | Revisar de forma independiente y señalar fallos concretos; no rehacer todo por defecto |
+| Aplicar un cambio revisado al repositorio | ChatGPT o Claude, según la integración disponible | Leer la versión actual, trabajar en rama y confirmar commit; nunca asumir permisos por tener acceso de lectura |
 | Comprobar si el cambio funciona de verdad | Usuario + pruebas disponibles | Ejecutar la aplicación y seguir una lista de pruebas; no confundir lectura de código con ejecución |
 
 ## Formato de respuesta para cualquier petición de desarrollo
