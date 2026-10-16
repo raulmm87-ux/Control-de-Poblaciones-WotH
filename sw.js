@@ -1,7 +1,7 @@
 /* Service worker · red primero, caché como respaldo sin conexión.
    Sube el número de versión en cada publicación para renovar la caché. */
-const CACHE = 'woth-1.0.0-f1';
-const CORE = ['./', 'index.html', 'manifest.webmanifest'];
+const CACHE = 'woth-1.0.0-f2';
+const CORE = ['./', 'index.html', 'supabase.js', 'manifest.webmanifest'];
 const ICONS = ['icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {

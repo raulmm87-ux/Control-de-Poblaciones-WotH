@@ -364,6 +364,7 @@ button.xc:not(:disabled):hover,button.xc:active,button.xc:focus-visible{backgrou
 #hp .acts{flex-direction:row!important;align-items:center;justify-content:flex-end!important;gap:6px}
 #hp .acts>.ag:first-child{display:flex!important;flex-direction:column;gap:4px;grid-template-columns:none}
 #hp .acts>.ag.r{display:flex;flex-direction:row}
+#lg{position:fixed;inset:0;z-index:300;background:var(--dk);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) 16px 16px;overflow:auto}#lg[hidden]{display:none}#lg .c{width:min(380px,100%)}#lg .lgt{font:400 28px/1.1 Anton,Oswald,'Arial Narrow',sans-serif;letter-spacing:.04em;margin:0 0 6px}#lg label{display:block;margin:10px 0 0}#lg label span{display:block;font-size:12px;color:var(--mu);margin-bottom:2px}#lg input{width:100%;font-size:16px}#lg_s{width:100%;margin-top:6px}#lg_b{cursor:pointer;color:var(--mu)}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle class="f" cx="12" cy="12" r="4"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 5h11l-2.5 4 2.5 4H6"/><circle class="f" cx="6" cy="4" r="1.5"/></symbol><symbol id="i-dna" viewBox="0 0 24 24"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9M9.5 7h5M9.5 17h5"/><circle class="f" cx="12" cy="12" r="1.4"/></symbol><symbol id="i-hg" viewBox="0 0 24 24"><path d="M8 3h8v4l-4 5 4 5v4H8v-4l4-5-4-5V3z"/><circle class="f" cx="12" cy="18" r="1.3"/></symbol><symbol id="i-cup" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 20h8"/><circle class="f" cx="12" cy="7.5" r="1.3"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle class="f" cx="12" cy="15.5" r="1.5"/></symbol><symbol id="i-aim" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle class="f" cx="12" cy="12" r="1.6"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="currentColor" fill-opacity=".3"/><circle cx="12" cy="12" r="3.6"/><circle class="f" cx="12" cy="12" r="1.3"/></symbol><symbol id="i-lens" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><circle class="f" cx="10.5" cy="10.5" r="1.6"/></symbol><symbol id="i-chk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7.5 12.5l3 3 6-6.5"/></symbol><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.5 2.5 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/><circle class="f" cx="6.5" cy="17.5" r="1.1"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1.1.9-1.1 1.6"/><circle class="f" cx="12" cy="16.6" r="1.1"/></symbol><symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 20v-8M12 12c0-3.2-2.2-5-6-5 0 3.4 2.2 5 6 5zM12 14c0-2.6 1.9-4.5 6-4.5 0 2.6-1.9 4.5-6 4.5z"/><circle class="f" cx="12" cy="20.5" r="1.1"/></symbol><symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4.5l9 15.5H3z"/><path d="M12 10v4"/><circle class="f" cx="12" cy="17" r="1"/></symbol><symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5h6M8.5 10h7M8.5 14h5"/><circle class="f" cx="12" cy="4.5" r="1.2"/></symbol><symbol id="i-male" viewBox="0 0 24 24"><circle cx="10" cy="14" r="5.5"/><path d="M14 10l6-6M14.5 4H20v5.5"/><circle class="f" cx="10" cy="14" r="1.4"/></symbol><symbol id="i-female" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M12 14.5V21M9 18h6"/><circle class="f" cx="12" cy="9" r="1.4"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><path d="M18.43 10.52L21.31 10.69L21.31 13.31L18.43 13.48A6.6 6.6 0 0 1 17.60 15.50L17.60 15.50L19.51 17.66L17.66 19.51L15.50 17.60A6.6 6.6 0 0 1 13.48 18.43L13.48 18.43L13.31 21.31L10.69 21.31L10.52 18.43A6.6 6.6 0 0 1 8.50 17.60L8.50 17.60L6.34 19.51L4.49 17.66L6.40 15.50A6.6 6.6 0 0 1 5.57 13.48L5.57 13.48L2.69 13.31L2.69 10.69L5.57 10.52A6.6 6.6 0 0 1 6.40 8.50L6.40 8.50L4.49 6.34L6.34 4.49L8.50 6.40A6.6 6.6 0 0 1 10.52 5.57L10.52 5.57L10.69 2.69L13.31 2.69L13.48 5.57A6.6 6.6 0 0 1 15.50 6.40L15.50 6.40L17.66 4.49L19.51 6.34L17.60 8.50A6.6 6.6 0 0 1 18.43 10.52Z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 5v10M7.5 10.5L12 15l4.5-4.5M5 19.5h14"/><circle class="f" cx="12" cy="4.2" r="1.2"/></symbol><symbol id="i-ul" viewBox="0 0 24 24"><path d="M12 15V5M7.5 9.5L12 5l4.5 4.5M5 19.5h14"/><circle class="f" cx="12" cy="15.8" r="1.2"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V4.8h5V7M6.5 7l1 12.2h9L17.5 7M10 10.5v5.5M14 10.5v5.5"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/><circle class="f" cx="12" cy="14.5" r="1.4"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M6 4.5h9.5L19 8v11.5H6z"/><path d="M15.5 4.5V8H19M9.5 12.5h6M9.5 16h4"/><circle class="f" cx="9.5" cy="9" r="1"/></symbol></defs></svg>
 <header><div class="ut"><button class="g" id="ex" title="Exportar copia de seguridad" aria-label="Exportar">⬇</button><label class="bt" title="Importar copia de seguridad" aria-label="Importar">⬆<input type="file" id="im" accept=".json" hidden></label><button class="g" id="cfb" title="Ajustes" aria-label="Ajustes">⚙</button><button class="g" id="hb" title="Ayuda y leyenda de símbolos">?</button></div><div class="brw"><h1 class="sro">Gestión de Población</h1><svg class="brs" viewBox="0 18 700 76" role="img" aria-label="Gestión de Población · Panel cinegético · Way of the Hunter"><defs><linearGradient id="ln" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#f4efe0" stop-opacity=".95"/><stop offset=".7" stop-color="#f4efe0" stop-opacity=".55"/><stop offset="1" stop-color="#f4efe0" stop-opacity="0"/></linearGradient><filter id="rg" x="-3%" y="-20%" width="106%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.05 0.1" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.8" xChannelSelector="R" yChannelSelector="G"/></filter></defs><path transform="translate(-6 41.9) scale(.75)" fill="#f4efe0" fill-rule="evenodd" d="M16.5,58.5 97.2,58.8 98.8,57.0 111.8,57.0 117.2,55.2 117.2,58.8 140.0,58.8 145.2,51.5 148.5,50.0 149.0,46.2 146.8,43.2 146.8,39.8 145.0,38.8 140.0,41.5 137.5,41.2 132.2,43.5 130.2,42.8 130.2,34.5 131.8,31.8 134.0,16.0 135.0,14.5 136.5,14.2 153.2,25.2 165.8,31.0 167.5,32.8 160.0,39.8 157.8,47.2 153.5,54.2 154.2,55.8 153.8,58.8 160.5,58.8 163.2,56.0 163.8,54.2 161.8,52.2 161.5,47.2 163.0,45.0 165.0,38.2 167.5,37.0 169.8,33.8 173.0,35.2 178.8,35.5 193.2,42.2 196.2,44.8 196.2,46.0 194.8,46.8 190.0,45.5 188.2,44.0 185.0,43.8 179.2,40.8 178.2,40.8 175.5,43.5 170.5,43.8 167.5,58.8 204.2,58.8 202.2,54.2 199.5,51.5 201.2,45.2 202.8,43.8 205.0,44.2 220.5,58.8 278.5,58.8 276.8,56.8 277.2,55.2 281.8,57.2 282.5,58.8 285.2,58.8 284.2,57.2 273.5,50.0 264.8,53.2 262.5,53.2 249.8,42.8 240.8,37.0 237.5,37.5 222.2,48.5 220.0,49.0 210.5,40.2 208.2,39.5 206.2,40.5 201.5,40.5 198.0,37.8 184.2,31.0 177.5,30.5 170.2,26.0 161.2,22.2 148.0,12.8 138.0,7.5 128.8,9.8 124.2,14.2 119.8,16.2 103.2,27.0 97.8,29.5 90.2,39.5 85.0,43.2 78.5,46.2 75.5,45.2 64.8,37.5 61.8,37.0 55.2,40.5 39.8,53.2 37.5,53.2 29.0,49.8ZM241.0,41.2 246.5,44.2 255.5,51.5 256.0,55.0 255.2,56.5 251.2,58.5 249.0,58.0 248.2,55.2 244.8,53.0 245.0,52.0 248.0,51.8 248.2,51.0 242.5,48.0 240.2,44.2ZM62.8,40.8 64.8,40.5 71.0,46.8 69.8,47.5 65.2,47.2 64.5,46.5 65.0,44.2 62.8,43.0Z"/><rect x="0" y="86" width="700" height="1.6" fill="url(#ln)"/><text class="sbt" x="226" y="33" font-size="15" letter-spacing="2.4" fill="#98a99e">PANEL CINEGÉTICO<tspan class="sbx"> · WAY OF THE HUNTER</tspan></text><text x="224" y="86" font-family="Anton,Oswald,'Arial Narrow',sans-serif" font-size="50" fill="#f4efe0" textLength="470" lengthAdjust="spacing" rotate="-.8 .6 -.3 .9 -.6 .4 -.9 0 .7 -.5 0 .8 -.4 .5 -.7 .3 .9 -.6 .4 -.3" dy="0 -.6 .9 -.7 .9 -.8 .5 -.2 -.7 1.1 -.4 -.5 1.1 -.8 .5 -.9 1 -.7 .8 -.5" filter="url(#rg)">GESTIÓN DE POBLACIÓN</text></svg></div></header>
@@ -387,6 +388,8 @@ button.xc:not(:disabled):hover,button.xc:active,button.xc:focus-visible{backgrou
 </main>
 <aside id="hp" hidden></aside><div id="fo" hidden></div><div id="sw" hidden></div><div id="ts" hidden></div><div id="dg" hidden></div><div id="st" hidden></div>
 <div id="fdo" hidden></div><aside id="fd" hidden><div class="fdh"><b id="fdt">Filtros</b><button class="xc" data-fdc title="Cerrar">✕</button></div><div class="fdb"><div class="fsec" data-t="m" hidden><label class="ff dfs"><span>Especie</span><span id="dfs_m"></span></label><label class="ff"><span>Estado</span><select id="mE"></select></label><label class="ff"><span>Vigilancia</span><select id="mR"></select></label></div><div class="fsec" data-t="x" hidden><label class="ff dfs"><span>Especie</span><span id="dfs_x"></span></label><label class="ff"><span>Manada</span><select id="xM"></select></label><label class="ff"><span>Tipo de extracción</span><select id="xT"></select></label><label class="ff"><span>Acierto</span><select id="xA"></select></label><label class="ff"><span>Fecha desde (día de juego)</span><input type="number" id="xD" min="1"></label></div><div class="fsec" data-t="a" hidden><label class="ff dfs"><span>Especie</span><span id="dfs_a"></span></label><label class="ff"><span>Manada</span><select id="aM"></select></label><label class="ff"><span>Sexo</span><select id="aS"></select></label><label class="ff"><span>Edad</span><select id="aE"></select></label><label class="ff"><span>Estrellas</span><select id="aT"></select></label><label class="ff"><span>Acción</span><select id="aA"></select></label></div><div class="fsec" data-t="p" id="fp_p" hidden></div></div><div class="fdf"><button class="g" id="fdclr">Limpiar filtros</button><button data-fdc>Hecho</button></div></aside>
+<div id="lg"><div class="c"><div id="lg_w" class="hint">Comprobando sesión…</div><form id="lg_f" hidden><div class="lgt">Gestión de Población</div><p class="hint" style="margin:0">Inicia sesión con tu cuenta. Los datos de cada cuenta son privados.</p><label><span>Correo</span><input id="lg_m" type="email" autocomplete="username" required></label><label><span>Contraseña</span><input id="lg_p" type="password" autocomplete="current-password" required></label><p class="hint" id="lg_e" style="color:#b03a12;min-height:1.2em;margin:8px 0 0"></p><button id="lg_s" type="submit">Entrar</button><p style="text-align:center;margin:12px 0 0"><a href="#" id="lg_b" class="hint">Continuar sin iniciar sesión (solo datos locales)</a></p></form></div></div>
+<script src="supabase.js"></script>
 <script>
 
 const G={'Cérvidos':['Ciervo Cola Blanca','Mula de las Montañas','Ciervo Común','Ciervo Rojo (Nueva Zelanda)','Gamo','Corzo','Ciervo Sika','Ciervo de Sitka','Sambar','Alce Occidental','Alce de Alaska','Alce Euroasiático','Wapití de las Rocosas','Wapití de Roosevelt','Caribú de Tierras Áridas','Reno de Montaña'],
@@ -861,7 +864,96 @@ const xcIns=()=>[$('st'),$('fo')].forEach(o=>{const c=o.querySelector('.c');if(c
 $('pk_mp').onclick=e=>menuPop(e.currentTarget,$('mp'));$('pk_fs').onclick=e=>menuPop(e.currentTarget,$('fs'));
 setTb(getTb());addEventListener('scroll',stk,{passive:true});addEventListener('resize',stk);addEventListener('resize',fitNav);addEventListener('resize',()=>{clearTimeout(kpTimer);kpTimer=setTimeout(paintKPIs,120)});stk();$('lgb').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('hmb').onclick=e=>hmenu(e.currentTarget);$('fdo').onclick=closeFD;$('fdclr').onclick=()=>{if(FDT=='p'){PF={s:'',e:'',t:'',a:''};render();openFD('p')}else if(FDT){FF[FDT].forEach(([l,i])=>{$(i).value=''});if(mob()){$('fs').value='';$('fs').dispatchEvent(new Event('change',{bubbles:true}))}render();fchips()}};
 document.addEventListener('change',()=>setTimeout(fchips,0));document.addEventListener('input',()=>setTimeout(fchips,0));document.addEventListener('keydown',e=>{if(e.key=='Escape'&&FDT)closeFD()});
-CAT0=catNow();nzS();$('cfb').onclick=cfgDlg;syncCfg();render();icoNode(document.body);icoObs.observe(document.body,{childList:true,subtree:true});fchips();pkSync();fitNav();
+CAT0=catNow();nzS();$('cfb').onclick=()=>{cfgDlg();window.nubeCfg&&nubeCfg()};syncCfg();render();icoNode(document.body);icoObs.observe(document.body,{childList:true,subtree:true});fchips();pkSync();fitNav();
 if(LOADERR)dlg('Los datos guardados en este dispositivo no se pudieron leer. Se ha conservado una copia del contenido original y se muestran datos de ejemplo. No exportes ni edites todavía: avísame para recuperarlos.');
 if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){const had=!!navigator.serviceWorker.controller;addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));navigator.serviceWorker.addEventListener('controllerchange',()=>{if(had)toast('Nueva versión instalada · recarga para usarla')})}
+</script>
+<script>
+/* ---------- NUBE · Supabase (F2): login, migración y descarga ---------- */
+(()=>{
+const SB_URL='https://phngwircyqiruohbrpqo.supabase.co',SB_KEY='sb_publishable_4lGarOFBoq54x3li8P9M9g_c3ce59jU',
+ LK='wotH_uid',PRE='wotH5_pre_nube',L=$('lg');
+let sb=null,user=null,busy=false;
+try{sb=supabase.createClient(SB_URL,SB_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,storageKey:'wotH_auth'}})}catch(e){}
+const canon=v=>Array.isArray(v)?'['+v.map(canon).join(',')+']':v&&typeof v=='object'?'{'+Object.keys(v).filter(k=>v[k]!==undefined).sort().map(k=>JSON.stringify(k)+':'+canon(v[k])).join(',')+'}':JSON.stringify(v),
+ cnt=s=>((s&&s.h)||[]).length+' manadas · '+((s&&s.a)||[]).length+' animales · '+((s&&s.x)||[]).length+' extracciones',
+ esDemo=()=>{try{const D=DEF();return canon({h:S.h,a:S.a,x:S.x})==canon({h:D.h,a:D.a,x:D.x})}catch(e){return false}},
+ hasLocal=()=>!!(S.h.length||S.a.length||S.x.length)&&!esDemo(),
+ errTxt=e=>{const m=String(e&&e.message||e||'');return /Invalid login/i.test(m)?'Correo o contraseña incorrectos.':(!navigator.onLine||/fetch|network|failed|load/i.test(m))?'Sin conexión con la nube. Revisa tu conexión.':'No se pudo completar la operación ('+m+').'},
+ fecha=t=>new Date(t).toLocaleString('es-ES'),
+ wait=()=>{L.hidden=false;$('lg_w').hidden=false;$('lg_f').hidden=true},
+ form=n=>{L.hidden=false;$('lg_w').hidden=true;$('lg_f').hidden=false;$('lg_e').textContent=n||'';setTimeout(()=>{try{$('lg_m').focus()}catch(e){}},50)},
+ close=()=>{L.hidden=true},
+ getRow=async c=>{const {data,error}=await sb.from('datos').select(c).eq('user_id',user.id).maybeSingle();if(error)throw error;return data};
+
+async function load(row,auto){
+ const x=row.data,er=chkS(x);
+ if(er){dlg('Los datos de la nube no son válidos ('+er+'). No se ha cambiado nada.');return false}
+ if(hasLocal()){try{localStorage.setItem(PRE,JSON.stringify(S))}catch(e){dlg('No se pudo guardar la copia previa en este dispositivo. No se ha cambiado nada.');return false}}
+ snap();S=x;S.hist=S.hist||[];S.v=S.v||SCH;nzS();Object.assign(CFG,CFG0,cfgOk(S.cfg));OP=null;sv();
+ try{localStorage.setItem(LK,user.id)}catch(e){}
+ syncCfg();render();
+ toast(auto?'Datos cargados desde tu cuenta':'Datos cargados de la nube');return true}
+
+async function migrar(){
+ if(!user)return;
+ if(!hasLocal()){dlg('Este dispositivo no tiene datos propios que migrar (solo los de ejemplo).');return}
+ $('ex').click();
+ await new Promise(r=>setTimeout(r,700));
+ if(!await dlg('Se ha descargado una copia de seguridad (archivo JSON). Comprueba que está en este dispositivo y pulsa Aceptar para subir los datos a la nube. Si no se ha descargado, pulsa Cancelar.'))return;
+ try{localStorage.setItem(PRE,JSON.stringify(S))}catch(e){dlg('No se pudo guardar la copia previa en este dispositivo. No se ha subido nada.');return}
+ try{
+  snap();const payload=JSON.parse(JSON.stringify(S));
+  const {error}=await sb.from('datos').insert({user_id:user.id,data:payload,version:1});
+  if(error){dlg(error.code=='23505'?'Tu cuenta ya tiene datos en la nube. No se ha subido ni cambiado nada.':'No se pudo subir ('+errTxt(error)+'). Tus datos locales siguen intactos.');return}
+  const row=await getRow('data');
+  if(row&&canon(row.data)==canon(payload)){try{localStorage.setItem(LK,user.id)}catch(e){}dlg('Migración completada y verificada: '+cnt(payload)+'. Tus datos de este dispositivo no se han modificado.')}
+  else{await sb.from('datos').delete().eq('user_id',user.id);dlg('La comprobación posterior no coincide, así que se ha cancelado la subida. Tus datos locales siguen intactos y tienes la copia descargada.')}
+ }catch(e){dlg('Error durante la migración: '+errTxt(e)+' Tus datos locales siguen intactos. Mira en ⚙ Ajustes → Nube si hay datos subidos antes de repetirla.')}}
+
+async function descargar(){
+ if(!user)return;
+ try{const row=await getRow('data,version,updated_at');
+  if(!row){dlg('Tu cuenta aún no tiene datos en la nube.');return}
+  if(!await dlg('¿Descargar los datos de la nube? Sustituirán los de este dispositivo ('+cnt(S)+'). Nube: '+cnt(row.data)+', guardados el '+fecha(row.updated_at)+'. Se guarda una copia previa y podrás recuperar lo anterior con «Deshacer».'))return;
+  await load(row,false)}
+ catch(e){dlg('No se pudo descargar ('+errTxt(e)+'). No se ha cambiado nada.')}}
+
+async function salir(){
+ if(!await dlg('¿Cerrar sesión en este dispositivo? Tus datos locales se conservan y en la nube no se borra nada.'))return;
+ $('st').hidden=true;try{await sb.auth.signOut({scope:'local'})}catch(e){}
+ user=null;form('')}
+
+async function after(){
+ try{const row=await getRow('data,version,updated_at');
+  if(row&&!hasLocal()){await load(row,true);return}
+  if(row&&localStorage.getItem(LK)!=user.id){dlg('Este dispositivo tiene datos propios y tu cuenta ya tiene datos en la nube. No se ha cambiado nada. En ⚙ Ajustes → Nube puedes descargar los de la nube (con copia previa).');return}
+  if(!row&&hasLocal()&&await dlg('Tu cuenta aún no tiene datos en la nube. ¿Quieres migrar ahora los datos de este dispositivo? Antes se descargará una copia de seguridad.'))migrar()}
+ catch(e){dlg('No se pudo consultar la nube ('+errTxt(e)+'). Puedes seguir con los datos de este dispositivo.')}}
+
+async function init(){
+ if(!sb){form('No se pudo cargar la conexión con la nube.');return}
+ wait();let r;
+ try{r=await sb.auth.getSession()}catch(e){r={error:e}}
+ const s=r&&r.data&&r.data.session;
+ if(s){user=s.user;close();after()}
+ else form(r&&r.error?(navigator.onLine?'No se pudo comprobar la sesión.':'Sin conexión: no se puede comprobar la sesión. Puedes continuar con los datos locales.'):'')}
+
+$('lg_f').onsubmit=async ev=>{ev.preventDefault();if(busy||!sb)return;busy=true;$('lg_e').textContent='';$('lg_s').disabled=true;
+ try{const {data,error}=await sb.auth.signInWithPassword({email:$('lg_m').value.trim(),password:$('lg_p').value});
+  if(error)throw error;user=data.user;$('lg_p').value='';close();after()}
+ catch(e){$('lg_e').textContent=errTxt(e)}
+ busy=false;$('lg_s').disabled=false};
+$('lg_b').onclick=ev=>{ev.preventDefault();close()};
+if(sb)sb.auth.onAuthStateChange(ev=>{if(ev=='SIGNED_OUT'){user=null;form('Sesión cerrada.')}});
+
+window.nubeCfg=()=>{
+ const e=$('st'),bar=$('cf_s')&&$('cf_s').parentNode;if(!bar)return;
+ bar.insertAdjacentHTML('beforebegin','<div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--br)"><p class="hint" style="margin:0 0 6px"><b>Nube</b> · '+(user?'sesión: '+esc(user.email||''):'sin sesión (solo datos locales)')+'</p><div class="bar">'+(user?'<button class="g" id="nb_up" type="button">Migrar local → nube</button><button class="g" id="nb_dn" type="button">Descargar de la nube</button><button class="g" id="nb_out" type="button">Cerrar sesión</button>':'<button class="g" id="nb_in" type="button">Iniciar sesión</button>')+'</div><p class="hint" id="nb_s" style="margin:6px 0 0"></p></div>');
+ const on=(i,f)=>{const b=$(i);if(b)b.onclick=f};
+ on('nb_up',()=>{e.hidden=true;migrar()});on('nb_dn',()=>{e.hidden=true;descargar()});on('nb_out',salir);on('nb_in',()=>{e.hidden=true;form('')});
+ if(user)getRow('updated_at,version').then(r=>{const s=$('nb_s');if(s)s.textContent=r?'En la nube: guardado el '+fecha(r.updated_at)+' (versión '+r.version+').':'Aún no hay datos en tu cuenta en la nube.'}).catch(()=>{})};
+
+init();
+})();
 </script></body></html>
