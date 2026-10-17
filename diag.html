@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Diagnóstico WotH</title>
+<meta name="theme-color" content="#1b3b2b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Diag WotH">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>body{margin:0;padding:16px;background:#1b3b2b;color:#fff;font:15px/1.4 system-ui,sans-serif}pre{white-space:pre-wrap;word-break:break-word}</style></head><body>
+<h2>Diagnóstico WotH</h2>
+<pre id="o">cargando…</pre>
+<script>
+const o=document.getElementById('o'),L=[];
+function p(s){L.push(s);o.textContent=L.join('\n')}
+window.onerror=(m,u,l)=>p('ERROR JS: '+m+' (línea '+l+')');
+p('HTML y JS cargados: OK');
+p('modo app (standalone): '+(navigator.standalone===true||matchMedia('(display-mode: standalone)').matches));
+p('URL: '+location.href);
+p('UA: '+navigator.userAgent);
+try{localStorage.setItem('_diag','1');localStorage.removeItem('_diag');p('localStorage: OK')}catch(e){p('localStorage: FALLA '+e.message)}
+p('service worker: '+('serviceWorker' in navigator?'disponible':'no disponible'));
+['icons/apple-touch-icon.png','manifest.webmanifest','supabase.js'].forEach(u=>fetch(u,{cache:'no-store'}).then(r=>p(u+': '+r.status+' '+(r.headers.get('content-type')||'')+(r.redirected?' (redirigido)':''))).catch(e=>p(u+': FALLA '+e.message)));
+</script></body></html>
