@@ -1,6 +1,6 @@
 /* Service worker · red primero, caché como respaldo sin conexión.
    Sube el número de versión en cada publicación para renovar la caché. */
-const CACHE = 'woth-1.0.0-f3';
+const CACHE = 'woth-1.0.0-f4a';
 const CORE = ['./', 'index.html', 'supabase.js', 'manifest.webmanifest'];
 const ICONS = ['icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png'];
 
@@ -26,8 +26,13 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     fetch(r)
       .then(res => {
-        if (res.ok) { const cp = res.clone(); caches.open(CACHE).then(c => c.put(r, cp)); }
-        return res;
+        // Safari/iOS rechaza (pantalla en blanco) las respuestas redirigidas servidas por el service worker:
+        // se reconstruye la respuesta sin la marca de redirección.
+        const out = res.redirected
+          ? new Response(res.body, { status: res.status, statusText: res.statusText, headers: res.headers })
+          : res;
+        if (out.ok) { const cp = out.clone(); caches.open(CACHE).then(c => c.put(r, cp)); }
+        return out;
       })
       .catch(() => caches.match(r, { ignoreSearch: true }).then(m => m || (r.mode === 'navigate' ? caches.match('index.html') : Response.error())))
   );
