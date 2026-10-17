@@ -1,6 +1,6 @@
 # Gestión de Población · Way of the Hunter
 
-Herramienta de gestión de manadas y descastes (mapas, años biológicos, extracciones). Una sola página web que funciona como app instalable (PWA). **Versión actual: 1.0.0-F2 (login y migración a la nube, pendiente de prueba real).**
+Herramienta de gestión de manadas y descastes (mapas, años biológicos, extracciones). Una sola página web que funciona como app instalable (PWA). **Versión actual: 1.0.0-F3 (sincronización automática, pendiente de prueba real).**
 
 ## Reglas de trabajo (leer al empezar cada chat)
 - Conservar funciones, diseño y lógica actuales. No rehacer ni refactorizar sin necesidad.
@@ -29,8 +29,8 @@ Herramienta de gestión de manadas y descastes (mapas, años biológicos, extrac
 ## Plan por fases
 - **F0** (hecha y probada): aviso de guardado fallido, validación de importar, versión de esquema, Chart.js y fuentes incluidos.
 - **F1** (hecha y probada en portátil, iPhone 13 Pro e iPad 10 con Chrome): PWA instalable y alojada, con datos locales por dispositivo.
-- **F2** (implementada, **pendiente de prueba real**): Supabase con correo y contraseña. Pantalla de login con sesión persistente y «Cerrar sesión» en Ajustes → Nube. Migración local → nube (exportación obligatoria, copia previa, subida sin sobrescribir y verificación), «Descargar de la nube» y carga automática en un dispositivo sin datos propios.
-- **F3**: sincronización automática (versión por documento, aviso de conflicto con elección), estado de guardado visible, tiempo real, aviso semanal para evitar la pausa de Supabase gratuito (7 días sin actividad).
+- **F2** (hecha y probada por el usuario): Supabase con correo y contraseña. Pantalla de login con sesión persistente y «Cerrar sesión» en Ajustes → Nube. Migración local → nube (exportación obligatoria, copia previa, subida sin sobrescribir y verificación), «Descargar de la nube» y carga automática en un dispositivo sin datos propios.
+- **F3** (implementada, **pendiente de prueba real**): subida automática 3 s después de guardar, versión por documento, aviso de conflicto con elección (copias `wotH5_nube_previa` / `wotH5_pre_nube`), indicador de estado, tiempo real (requiere activar Realtime en la tabla `datos`) y actualización al volver a la app, aviso si pasan 5 días sin conectar (Supabase gratuito pausa a los 7 días sin actividad). Sin conexión se acumulan los cambios y se suben al volver. El enlace «Continuar sin iniciar sesión» solo aparece sin conexión o si no se puede comprobar la sesión.
 - **F4**: pruebas reales en los tres dispositivos.
 
 ## Despliegue
