@@ -1,6 +1,6 @@
 /* Service worker · red primero, caché como respaldo sin conexión.
    Sube el número de versión en cada publicación para renovar la caché. */
-const CACHE = 'woth-1.0.0-f5a';
+const CACHE = 'woth-1.0.0-f5b';
 const CORE = ['./', 'index.html', 'supabase.js', 'manifest.webmanifest'];
 const ICONS = ['icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png'];
 
