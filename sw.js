@@ -1,7 +1,7 @@
 /* Service worker · red primero con límite de espera (3 s) y caché como respaldo.
    Si la red no responde (p. ej. bloqueo de IP en días de partido) se usa la copia guardada.
    Sube el número de versión en cada publicación para renovar la caché. */
-const CACHE = 'woth-1.0.0-f5e';
+const CACHE = 'woth-1.0.0-f5d2';
 const CORE = ['./', 'index.html', 'supabase.js', 'manifest.webmanifest'];
 const ICONS = ['icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png'];
 const ESPERA = 3000;
