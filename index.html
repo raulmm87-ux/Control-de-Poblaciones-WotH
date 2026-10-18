@@ -393,24 +393,39 @@ button.xc:not(:disabled):hover,button.xc:active,button.xc:focus-visible{backgrou
 #ta .acts button,#tx td.ac .acts button,#ta .acts button.be,#ta .acts button.bd,#tx .acts button.be,#tx .acts button.bd{width:44px!important;min-width:44px!important;height:44px!important;padding:0!important}
 }
 
-/* ===== f5g: vista estrecha de extracciones (filas de dos alturas + selección) ===== */
-#txm{display:none}
+/* ===== f5h: vista estrecha (extracciones y animales) + ficha + bloqueo de scroll del "Ver todos" ===== */
+html.vlock{overflow:hidden}
+#va{overscroll-behavior:contain;touch-action:none}.vab{overscroll-behavior:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch;min-height:0}
+#txm,#tam{display:none}
 @media(max-width:900px){
-.sc:has(>#tx),#va_tx{display:none!important}
-#txm{display:block}
+.sc:has(>#tx),.sc:has(>#ta),#va_tx,#va_ta{display:none!important}
+#txm,#tam{display:block}
 .mxa{display:flex;align-items:center;gap:8px;padding:6px 0}.mxa b{flex:1;font-size:14px;color:var(--tx)}
 .mxs2{height:36px;display:flex;align-items:center;gap:6px;border:1px solid var(--br);background:var(--card);color:var(--tx);border-radius:9px;padding:0 12px;font-weight:700;font-size:13px;font-family:inherit}
 .mxi{width:36px;height:36px;border:1px solid var(--br);background:var(--card);color:var(--tx);border-radius:9px;font-size:16px;padding:0}.mxi[disabled]{opacity:.4}.mxi.del{color:#b03a12;border-color:#e3b9a8}
 .mxl{background:var(--card);border:1px solid var(--br);border-radius:12px;overflow:hidden}
-.mxr{display:flex;align-items:center;gap:8px;padding:6px 10px;border-top:1px solid var(--br);min-height:56px;box-sizing:border-box;cursor:pointer}.mxr:first-child{border-top:0}
+.mxr{display:flex;align-items:center;gap:8px;padding:6px 10px;border-top:1px solid var(--br);min-height:46px;box-sizing:border-box;cursor:pointer}.mxr:first-child{border-top:0}
 .mxr:hover{background:rgba(201,128,58,.07)}.mxr.on{background:rgba(201,128,58,.14);box-shadow:inset 0 0 0 2px var(--or)}
 .mxc{width:22px;height:22px;flex:none;border-radius:6px;border:2px solid #9fb0a4;background:var(--card);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}.mxc.on{background:#1b3b2b;border-color:#1b3b2b}
 .mxb{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
-.mx1{display:flex;align-items:center;gap:8px;min-width:0}.mx2{display:grid;grid-template-columns:76px 54px 1fr 40px 20px 20px;align-items:center;gap:4px;font-size:13.5px}.mx2>*{min-width:0;white-space:nowrap}
+.mx1{display:flex;align-items:center;gap:8px;min-width:0}
+.mx2{display:grid;grid-template-columns:76px 54px 38px 1fr 20px 20px;align-items:center;gap:4px;font-size:13.5px}.mx2>*{min-width:0;white-space:nowrap}
+.ma{display:grid;grid-template-columns:54px 76px 58px 1fr 22px;align-items:center;gap:6px;font-size:14px}.ma>*{min-width:0;white-space:nowrap}
+.mxes{overflow:hidden}.mxes .p{font-size:12px}
+.mxr .stc{font-size:12px;white-space:nowrap}
 .mxm{font-weight:700;font-size:15px;text-decoration:underline;text-underline-offset:2px;flex:none;max-width:110px;overflow:hidden;text-overflow:ellipsis}
 .mxt{font-size:11px;font-weight:700;padding:1px 7px;border-radius:7px;background:var(--md);flex:none}.mxt.d{background:#f3d9cf;color:#8f2f0d}.mxt.t{background:#f5e6bd;color:#7a5410}
-.mxs{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12.5px;color:var(--mu)}.mxd{flex:none;font-size:12.5px;color:var(--mu)}
-.mxe{overflow:hidden;text-overflow:ellipsis}.mxg{text-align:right}
+.mxs{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;color:var(--tx)}.mxd{flex:none;font-size:12.5px;color:var(--mu)}
+.mxe{overflow:hidden;text-overflow:ellipsis;color:var(--mu);font-size:12.5px}.mxg{text-align:left}
+.sxm{font-size:15px}.sxm.m{color:#2b6a8f}.sxm.h{color:#a63d6b}
+.mxn{cursor:pointer}
+.mxsc{position:fixed;inset:0;background:rgba(20,32,25,.5);z-index:40}
+.mxsh{position:fixed;left:0;right:0;bottom:0;z-index:41;background:var(--card);color:var(--tx);border-radius:20px 20px 0 0;padding:14px 16px calc(16px + env(safe-area-inset-bottom));max-height:85vh;overflow:auto;overscroll-behavior:contain}
+.mxh{padding-right:44px;margin-bottom:10px}.mxh .mxm{font-size:20px;max-width:none}
+.mxcl{position:absolute;top:6px;right:6px;width:44px;height:44px;border:0;background:none;color:var(--tx);font-size:20px}
+.mxk{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}.mxk .w{grid-column:1/3}.mxk .k{font-size:11px;letter-spacing:.4px;text-transform:uppercase;color:var(--mu)}.mxk .v{font-size:16px;font-weight:600}
+.mxbt{display:flex;gap:10px;margin-top:16px}.mxbt.mxw{flex-wrap:wrap}.mxb1{flex:1 1 40%;height:48px;border-radius:10px;border:1px solid var(--br);background:var(--card);color:var(--tx);font-weight:700;font-size:15px;font-family:inherit}.mxb1.del{color:#b03a12;border-color:#e3b9a8}
+.mxpop{position:fixed;right:12px;left:auto;max-width:80vw;background:#1d2a22;color:#fff;font-size:13px;padding:7px 10px;border-radius:9px;z-index:60;box-shadow:0 4px 12px rgba(0,0,0,.3)}
 }
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle class="f" cx="12" cy="12" r="4"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 5h11l-2.5 4 2.5 4H6"/><circle class="f" cx="6" cy="4" r="1.5"/></symbol><symbol id="i-dna" viewBox="0 0 24 24"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9M9.5 7h5M9.5 17h5"/><circle class="f" cx="12" cy="12" r="1.4"/></symbol><symbol id="i-hg" viewBox="0 0 24 24"><path d="M8 3h8v4l-4 5 4 5v4H8v-4l4-5-4-5V3z"/><circle class="f" cx="12" cy="18" r="1.3"/></symbol><symbol id="i-cup" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 20h8"/><circle class="f" cx="12" cy="7.5" r="1.3"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle class="f" cx="12" cy="15.5" r="1.5"/></symbol><symbol id="i-aim" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle class="f" cx="12" cy="12" r="1.6"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="currentColor" fill-opacity=".3"/><circle cx="12" cy="12" r="3.6"/><circle class="f" cx="12" cy="12" r="1.3"/></symbol><symbol id="i-lens" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><circle class="f" cx="10.5" cy="10.5" r="1.6"/></symbol><symbol id="i-chk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7.5 12.5l3 3 6-6.5"/></symbol><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.5 2.5 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/><circle class="f" cx="6.5" cy="17.5" r="1.1"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1.1.9-1.1 1.6"/><circle class="f" cx="12" cy="16.6" r="1.1"/></symbol><symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 20v-8M12 12c0-3.2-2.2-5-6-5 0 3.4 2.2 5 6 5zM12 14c0-2.6 1.9-4.5 6-4.5 0 2.6-1.9 4.5-6 4.5z"/><circle class="f" cx="12" cy="20.5" r="1.1"/></symbol><symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4.5l9 15.5H3z"/><path d="M12 10v4"/><circle class="f" cx="12" cy="17" r="1"/></symbol><symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5h6M8.5 10h7M8.5 14h5"/><circle class="f" cx="12" cy="4.5" r="1.2"/></symbol><symbol id="i-male" viewBox="0 0 24 24"><circle cx="10" cy="14" r="5.5"/><path d="M14 10l6-6M14.5 4H20v5.5"/><circle class="f" cx="10" cy="14" r="1.4"/></symbol><symbol id="i-female" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M12 14.5V21M9 18h6"/><circle class="f" cx="12" cy="9" r="1.4"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><path d="M18.43 10.52L21.31 10.69L21.31 13.31L18.43 13.48A6.6 6.6 0 0 1 17.60 15.50L17.60 15.50L19.51 17.66L17.66 19.51L15.50 17.60A6.6 6.6 0 0 1 13.48 18.43L13.48 18.43L13.31 21.31L10.69 21.31L10.52 18.43A6.6 6.6 0 0 1 8.50 17.60L8.50 17.60L6.34 19.51L4.49 17.66L6.40 15.50A6.6 6.6 0 0 1 5.57 13.48L5.57 13.48L2.69 13.31L2.69 10.69L5.57 10.52A6.6 6.6 0 0 1 6.40 8.50L6.40 8.50L4.49 6.34L6.34 4.49L8.50 6.40A6.6 6.6 0 0 1 10.52 5.57L10.52 5.57L10.69 2.69L13.31 2.69L13.48 5.57A6.6 6.6 0 0 1 15.50 6.40L15.50 6.40L17.66 4.49L19.51 6.34L17.60 8.50A6.6 6.6 0 0 1 18.43 10.52Z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 5v10M7.5 10.5L12 15l4.5-4.5M5 19.5h14"/><circle class="f" cx="12" cy="4.2" r="1.2"/></symbol><symbol id="i-ul" viewBox="0 0 24 24"><path d="M12 15V5M7.5 9.5L12 5l4.5 4.5M5 19.5h14"/><circle class="f" cx="12" cy="15.8" r="1.2"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V4.8h5V7M6.5 7l1 12.2h9L17.5 7M10 10.5v5.5M14 10.5v5.5"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/><circle class="f" cx="12" cy="14.5" r="1.4"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M6 4.5h9.5L19 8v11.5H6z"/><path d="M15.5 4.5V8H19M9.5 12.5h6M9.5 16h4"/><circle class="f" cx="9.5" cy="9" r="1"/></symbol></defs></svg>
@@ -746,7 +761,7 @@ function render(){const m=S.act,cy=yr(S.maps[m]),f=$('fs').value,HM=S.h.filter(h
  AF=AL.filter(x=>(!aM||x.h.id==aM)&&(!aS||x.a.sx==aS)&&(!aE||x.a.ed==aE)&&(!aT||(x.a.sx=='M'&&x.a.st==aT))&&(!aA||x.st==aA));
  $('aN').textContent=AF.length+' de '+AL.length+' animales';
   $('ta').innerHTML='<tr>'+sth('ta','h','Manada')+sth('ta','sx','Sexo')+sth('ta','ed','Edad')+sth('ta','st','★')+sth('ta','s','Estado')+sth('ta','nt','Nota')+'<th></tr>'+tsort(AF,'ta').map(x=>`<tr><td data-open="${x.h.id}" style="cursor:pointer;font-weight:600">${x.h.id}<td>${sx(x.a.sx)}<td>${AGE[x.a.ed]}<td class="stc">${stars(x.a.sx=='H'?0:x.a.st)}<td><span class="p ${CS[x.s]}">${x.st}</span>${ntCell(x)}<td class="ac"><div class="acts">${actBtns(x,false)}</div></tr>`).join('');
- limT('ta');const xM=$('xM').value,xT=$('xT').value,xA=$('xA').value,xD=$('xD').value,XL=S.x.map((x,i)=>[x,i]).filter(([x])=>x.mp==m&&(!f||x.sp==f)&&(!xM||x.h==xM)&&(!xT||x.ty==xT)&&(!xD||(x.d!=null&&x.d>=+xD))&&(!xA||(xA[0]=='✅'?x.ok===true:x.ok===false)));
+ limT('ta');maRender();const xM=$('xM').value,xT=$('xT').value,xA=$('xA').value,xD=$('xD').value,XL=S.x.map((x,i)=>[x,i]).filter(([x])=>x.mp==m&&(!f||x.sp==f)&&(!xM||x.h==xM)&&(!xT||x.ty==xT)&&(!xD||(x.d!=null&&x.d>=+xD))&&(!xA||(xA[0]=='✅'?x.ok===true:x.ok===false)));
  $('xN').textContent=XL.length+' de '+X.length+' extracciones';
  $('tx').innerHTML='<tr>'+sth('tx','d','Fecha')+sth('tx','h','Manada')+sth('tx','sp','Especie')+sth('tx','sec','Sector')+sth('tx','sx','Sexo')+sth('tx','ed','Edad')+sth('tx','st','★')+sth('tx','ge','% Gen.')+sth('tx','ty','Tipo')+sth('tx','ok','Acierto')+sth('tx','nt','Notas')+'<th></tr>'+tsort(XL,'tx').map(([x,i])=>{const h=S.h.find(h=>h.id==x.h),bad=h&&h.sp!==x.sp;
   return`<tr><td style="white-space:nowrap">${x.d==null?'Sin fecha':'d'+dd(x.d)+' · A'+yr(x.d)}<td class="l" ${h?`data-open="${esc(x.h)}" style="cursor:pointer;font-weight:600"`:''}>${esc(x.h)}<td class="l" ${bad?'style="background:var(--bad)" title="La especie no coincide con la de la manada"':''}>${esc(x.sp||'')}<td class="l">${esc(x.sec||'')}<td>${sx(x.sx)}<td>${AGE[x.ed]||''}<td class="stc">${stars(x.sx=='H'?0:x.st)}<td>${x.ge!=null?x.ge+'%':''}<td class="l">${esc(x.ty)}<td>${x.ok==null?'—':x.ok?'✅':'⚠ Revisar'}<td class="l">${esc(x.nt||'')}<td class="ac"><div class="acts"><button class="be" data-ex2="${i}" title="Editar extracción">✎</button><button class="bd" data-dx="${i}" title="Eliminar extracción">🗑</button></div></tr>`}).join('');
@@ -836,32 +851,59 @@ function fsave(){const h=S.h.find(h=>h.id==w.h);if(!w.h||!w.sx||!w.ed||(w.sx=='M
  w=null;sv();fp();render();toast('Pieza guardada')}
 
 /* ---------- tablas: primeras filas + "Ver todos" ---------- */
-const LIM=matchMedia('(max-width:900px)').matches?7:15,VT={tm:'Manadas',tx:'Historial de extracciones',ta:'Todos los animales'};let VAO=null;const MXS={on:false,ids:new Set()};
+const LIM=matchMedia('(max-width:900px)').matches?7:15,VT={tm:'Manadas',tx:'Historial de extracciones',ta:'Todos los animales'};let VAO=null;const MXSEL={x:{on:false,ids:new Set()},a:{on:false,ids:new Set()}};
 function limT(t){const tb=document.getElementById(t),n=tb.rows.length-1;[...tb.rows].forEach((r,i)=>r.classList.toggle('xr',i>LIM));let a=document.getElementById('va_'+t);
  if(n>LIM){if(!a){a=document.createElement('div');a.id='va_'+t;a.className='vall';tb.parentElement.after(a)}a.innerHTML=`<button class="vl" data-all="${t}">Ver todos (${n})</button>`}else if(a)a.remove();
  if(VAO==t)openAll(t)}
 function openAll(t){let m=document.getElementById('va');if(!m){m=document.createElement('div');m.id='va';document.body.appendChild(m)}
  const old=m.querySelector('.vab'),top=old?old.scrollTop:0,c=document.getElementById(t).cloneNode(true);c.querySelectorAll('.xr').forEach(r=>r.classList.remove('xr'));
  m.innerHTML=`<div class="vap"><div class="vah"><h2>${VT[t]}</h2><button class="xc" data-allx="1" title="Cerrar">✕</button></div><div class="vab"></div></div>`;
- const b=m.querySelector('.vab');b.appendChild(c);if(t=='tx'&&matchMedia('(max-width:900px)').matches)b.innerHTML='<div class="mxl">'+mxData(document.getElementById('tx')).map(d=>mxRow(d,false)).join('')+'</div>';m.hidden=false;VAO=t;b.scrollTop=top}
-function closeAll(){const m=document.getElementById('va');if(m)m.hidden=true;VAO=null}
+ const b=m.querySelector('.vab');b.appendChild(c);if((t=='tx'||t=='ta')&&mxn()){const k=t=='tx'?'x':'a',dd=(k=='x'?mxData:maData)(document.getElementById(t)),pre=k=='a'?mxPre(dd.map(d=>d.h)):'';b.innerHTML='<div class="mxl">'+dd.map(d=>(k=='x'?mxRow:maRow)(d,false,pre)).join('')+'</div>'}m.hidden=false;document.documentElement.classList.add('vlock');VAO=t;b.scrollTop=top}
+function closeAll(){const m=document.getElementById('va');if(m)m.hidden=true;VAO=null;document.documentElement.classList.remove('vlock')}
 document.addEventListener('click',e=>{const x=e.target,b=x.closest('[data-all]');if(b){openAll(b.dataset.all);return}if(x.closest('[data-allx]')||x.id=='va'||(VAO&&x.closest('#va [data-open]')))closeAll()});
-/* ---------- vista estrecha de extracciones: filas de dos alturas + modo selección (lee la tabla ya filtrada y ordenada) ---------- */
-function mxData(tb){const o=[];for(let r=1;r<tb.rows.length;r++){const c=tb.rows[r].cells;if(c.length<12)continue;const b=c[11].querySelector('[data-dx]');if(!b)continue;const x=S.x[+b.dataset.dx];if(!x)continue;o.push({id:x.id,f:c[0].textContent,m:c[1].textContent,mo:c[1].getAttribute('data-open'),sp:c[2].textContent,bad:c[2].getAttribute('style')?1:0,sec:c[3].textContent,sx:c[4].textContent,ed:c[5].textContent,st:c[6].innerHTML,ge:c[7].textContent,ty:c[8].textContent,ok:c[9].textContent,nt:c[10].textContent})}return o}
-function mxRow(d,sel){const on=MXS.ids.has(d.id),tc=d.ty=='Descaste'?'d':d.ty=='Trofeo'?'t':'',ok=d.ok.includes('✅')?'✅':d.ok.includes('⚠')?'⚠':'';
- return`<div class="mxr${on?' on':''}" data-mxi="${esc(d.id)}">${sel?`<span class="mxc${on?' on':''}">${on?'✓':''}</span>`:''}<div class="mxb"><div class="mx1"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.m)}</span><span class="mxt ${tc}">${esc(d.ty)}</span><span class="mxs">${esc(d.sec)}</span><span class="mxd">${esc(d.f)}</span></div><div class="mx2"><span>${esc(d.sx)} ${esc(d.ed)}</span><span class="stc">${d.st}</span><span class="mxe"${d.bad?' title="La especie no coincide con la de la manada"':''}>${esc(d.sp)}${d.bad?' ⚠':''}</span><span class="mxg">${esc(d.ge)}</span><span>${ok}</span><span title="${esc(d.nt)}">${d.nt?'📝':''}</span></div></div></div>`}
-function mxRender(){const tb=$('tx');if(!tb)return;let m=$('txm');if(!m){m=document.createElement('div');m.id='txm';tb.parentElement.after(m)}
- const all=mxData(tb),ids=new Set(all.map(d=>d.id));[...MXS.ids].forEach(k=>{if(!ids.has(k))MXS.ids.delete(k)});const n=MXS.ids.size,
- bar=MXS.on?`<div class="mxa"><button class="mxi" data-mxx title="Salir de la selección" aria-label="Salir de la selección">✕</button><b>${n} seleccionada${n==1?'':'s'}</b><button class="mxi" data-mxe ${n==1?'':'disabled'} title="Editar" aria-label="Editar">✎</button><button class="mxi del" data-mxd ${n?'':'disabled'} title="Eliminar" aria-label="Eliminar">🗑</button></div>`:`<div class="mxa"><button class="mxs2" data-mxs>☐ Seleccionar</button><span class="hint">${all.length} extracciones</span></div>`;
- m.innerHTML=bar+'<div class="mxl">'+all.slice(0,LIM).map(d=>mxRow(d,MXS.on)).join('')+'</div>'+(all.length>LIM?`<button class="vl" data-all="tx">Ver todas (${all.length})</button>`:'')}
-document.addEventListener('click',e=>{const t=e.target;
- if(t.closest('[data-mxs]')){MXS.on=true;MXS.ids.clear();mxRender();return}
- if(t.closest('[data-mxx]')){MXS.on=false;MXS.ids.clear();mxRender();return}
- if(t.closest('[data-mxe]')){const i=S.x.findIndex(q=>q.id===[...MXS.ids][0]);if(i>=0){MXS.on=false;MXS.ids.clear();mxRender();fpEdit(i)}return}
- if(t.closest('[data-mxd]')){const n=MXS.ids.size;if(!n)return;const ids=new Set(MXS.ids);snap();GT=true;S.x=S.x.filter(q=>!ids.has(q.id));MXS.on=false;MXS.ids.clear();sv();render();toast(n+(n==1?' extracción eliminada':' extracciones eliminadas'));return}
- const r=t.closest('[data-mxi]');if(!r||t.closest('[data-open]'))return;const id=r.dataset.mxi;
- if(MXS.on&&!r.closest('#va')){MXS.ids.has(id)?MXS.ids.delete(id):MXS.ids.add(id);mxRender();return}
- const i=S.x.findIndex(q=>q.id===id);if(i>=0){if(r.closest('#va'))closeAll();fpEdit(i)}});
+/* ---------- vista estrecha: extracciones y animales en filas + selección + ficha (lee las tablas ya filtradas y ordenadas) ---------- */
+function mxn(){return matchMedia('(max-width:900px)').matches}
+function mxSx(v){return v=='M'?'<b class="sxm m">♂</b>':v=='H'?'<b class="sxm h">♀</b>':''}
+function mxkv(k,v,w){return`<div${w?' class="w"':''}><div class="k">${k}</div><div class="v">${v}</div></div>`}
+function mxPre(a){const p=a.map(x=>(x.match(/^[^-]+-/)||[''])[0]);return p.length&&p[0]&&p.every(z=>z===p[0])?p[0]:''}
+function mxData(tb){const o=[];for(let r=1;r<tb.rows.length;r++){const c=tb.rows[r].cells;if(c.length<12)continue;const bt=c[11].querySelector('[data-dx]');if(!bt)continue;const x=S.x[+bt.dataset.dx];if(!x)continue;o.push({id:x.id,sxr:x.sx,f:c[0].textContent,m:c[1].textContent,h:c[1].textContent,mo:c[1].getAttribute('data-open'),sp:c[2].textContent,bad:c[2].getAttribute('style')?1:0,sec:c[3].textContent,ed:c[5].textContent,st:c[6].innerHTML,ge:c[7].textContent,ty:c[8].textContent,ok:c[9].textContent,nt:c[10].textContent})}return o}
+function maData(tb){const o=[];for(let r=1;r<tb.rows.length;r++){const c=tb.rows[r].cells;if(c.length<7)continue;const bt=c[6].querySelector('[data-ea]');if(!bt)continue;const a=S.a[+bt.dataset.ea];if(!a)continue;const p=c[4].querySelector('.p'),n=c[5].querySelector('.ntt');o.push({id:a.id,sxr:a.sx,h:c[0].textContent,mo:c[0].getAttribute('data-open'),ed:c[2].textContent,st:c[3].innerHTML,es:p?p.outerHTML:'',nt:n?n.textContent:'',acts:c[6].querySelector('.acts')})}return o}
+function mxCb(on){return`<span class="mxc${on?' on':''}">${on?'✓':''}</span>`}
+function mxRow(d,sel){const on=MXSEL.x.ids.has(d.id),tc=d.ty=='Descaste'?'d':d.ty=='Trofeo'?'t':'',ok=d.ok.includes('✅')?'✅':d.ok.includes('⚠')?'⚠':'';
+ return`<div class="mxr${on?' on':''}" data-mxi="${esc(d.id)}" data-mxk="x">${sel?mxCb(on):''}<div class="mxb"><div class="mx1"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.m)}</span><span class="mxt ${tc}">${esc(d.ty)}</span><span class="mxs"${d.bad?' title="La especie no coincide con la de la manada"':''}>${esc(d.sp)}${d.bad?' ⚠':''}</span><span class="mxd">${esc(d.f)}</span></div><div class="mx2"><span>${mxSx(d.sxr)} ${esc(d.ed)}</span><span class="stc">${d.st}</span><span class="mxg">${esc(d.ge)}</span><span class="mxe">${esc(d.sec)}</span><span>${ok}</span><span class="mxn" data-mxn="${esc(d.nt)}" title="${esc(d.nt)}">${d.nt?'📝':''}</span></div></div></div>`}
+function maRow(d,sel,pre){const on=MXSEL.a.ids.has(d.id);
+ return`<div class="mxr${on?' on':''}" data-mxi="${esc(d.id)}" data-mxk="a">${sel?mxCb(on):''}<div class="mxb"><div class="ma"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.h.slice((pre||'').length))}</span><span>${mxSx(d.sxr)} ${esc(d.ed)}</span><span class="stc">${d.st}</span><span class="mxes">${d.es}</span><span class="mxn" data-mxn="${esc(d.nt)}" title="${esc(d.nt)}">${d.nt?'📝':''}</span></div></div></div>`}
+function mxPaint(k,tid,dataFn,rowFn,lbl){const tb=$(tid);if(!tb)return;let m=$(tid+'m');if(!m){m=document.createElement('div');m.id=tid+'m';tb.parentElement.after(m)}
+ const all=dataFn(tb),q=MXSEL[k],ids=new Set(all.map(d=>d.id));[...q.ids].forEach(z=>{if(!ids.has(z))q.ids.delete(z)});const n=q.ids.size,pre=k=='a'?mxPre(all.map(d=>d.h)):'',
+ bar=q.on?`<div class="mxa"><button class="mxi" data-mxx="${k}" title="Salir de la selección" aria-label="Salir de la selección">✕</button><b>${n} seleccionada${n==1?'':'s'}</b><button class="mxi" data-mxe="${k}" ${n==1?'':'disabled'} title="Editar" aria-label="Editar">✎</button><button class="mxi del" data-mxd="${k}" ${n?'':'disabled'} title="Eliminar" aria-label="Eliminar">🗑</button></div>`:`<div class="mxa"><button class="mxs2" data-mxs="${k}">☐ Seleccionar</button><span class="hint">${all.length} ${lbl}</span></div>`;
+ m.innerHTML=bar+'<div class="mxl">'+all.slice(0,LIM).map(d=>rowFn(d,q.on,pre)).join('')+'</div>'+(all.length>LIM?`<button class="vl" data-all="${tid}">Ver todas (${all.length})</button>`:'')}
+function mxRender(){mxPaint('x','tx',mxData,mxRow,'extracciones')}
+function maRender(){mxPaint('a','ta',maData,maRow,'animales')}
+function mxAll(){mxRender();maRender()}
+function mxClose(){document.querySelectorAll('.mxsc,.mxsh').forEach(x=>x.remove());if(!VAO)document.documentElement.classList.remove('vlock')}
+function mxPop(b){document.querySelectorAll('.mxpop').forEach(x=>x.remove());const tx=b.dataset.mxn;if(!tx)return;const r=b.getBoundingClientRect(),p=document.createElement('div');p.className='mxpop';p.textContent=tx;document.body.appendChild(p);p.style.top=Math.min(innerHeight-70,r.bottom+6)+'px';setTimeout(()=>p.remove(),4000)}
+function mxDel(k,ids){const n=ids.size;if(!n)return;mxClose();snap();GT=true;if(k=='x')S.x=S.x.filter(q=>!ids.has(q.id));else{bk(n==1?'Animal eliminado':'Animales eliminados');S.a=S.a.filter(q=>!ids.has(q.id))}const q=MXSEL[k];q.on=false;q.ids.clear();sv();render();toast(n+(k=='x'?(n==1?' extracción eliminada':' extracciones eliminadas'):(n==1?' animal eliminado':' animales eliminados')))}
+function mxSheet(k,id){mxClose();let h='';
+ if(k=='x'){const d=mxData($('tx')).find(z=>z.id===id);if(!d)return;const tc=d.ty=='Descaste'?'d':d.ty=='Trofeo'?'t':'';
+  h=`<div class="mx1 mxh"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.m)}${d.mo?' ›':''}</span><span class="mxt ${tc}">${esc(d.ty)}</span><span class="mxd">${esc(d.f)}</span></div><div class="mxk">${mxkv('Especie',esc(d.sp)+(d.bad?' ⚠':''))}${mxkv('Sexo · edad',mxSx(d.sxr)+' '+esc(d.ed))}${mxkv('Estrellas · genética real','<span class="stc">'+d.st+'</span> '+esc(d.ge))}${mxkv('Acierto',esc(d.ok))}${mxkv('Sector',esc(d.sec),1)}${d.nt?mxkv('Nota',esc(d.nt),1):''}</div><div class="mxbt"><button class="mxb1" data-mxfe="${esc(id)}">✎ Editar</button><button class="mxb1 del" data-mxfd="${esc(id)}">🗑 Borrar</button></div>`}
+ else{const d=maData($('ta')).find(z=>z.id===id);if(!d)return;
+  const bt=[...d.acts.querySelectorAll('button')].map(b=>`<button class="mxb1${b.classList.contains('bd')?' del':''}" ${[...b.attributes].filter(a=>a.name.startsWith('data-')).map(a=>`${a.name}="${esc(a.value)}"`).join(' ')}>${esc(b.textContent)} ${esc(b.title.split(' · ')[0])}</button>`).join('');
+  h=`<div class="mx1 mxh"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.h)}${d.mo?' ›':''}</span>${d.es}</div><div class="mxk">${mxkv('Sexo · edad',mxSx(d.sxr)+' '+esc(d.ed))}${mxkv('Estrellas','<span class="stc">'+d.st+'</span>')}${d.nt?mxkv('Nota',esc(d.nt),1):''}</div><div class="mxbt mxw">${bt}</div>`}
+ document.body.insertAdjacentHTML('beforeend',`<div class="mxsc"></div><div class="mxsh" role="dialog" aria-modal="true"><button class="mxcl" data-mxfc aria-label="Cerrar">✕</button>${h}</div>`);document.documentElement.classList.add('vlock')}
+document.addEventListener('click',e=>{const t=e.target;let b;
+ if(!t.closest('[data-mxn]'))document.querySelectorAll('.mxpop').forEach(x=>x.remove());
+ if(b=t.closest('[data-mxs]')){const q=MXSEL[b.dataset.mxs];q.on=true;q.ids.clear();mxAll();return}
+ if(b=t.closest('[data-mxx]')){const q=MXSEL[b.dataset.mxx];q.on=false;q.ids.clear();mxAll();return}
+ if(b=t.closest('[data-mxe]')){const k=b.dataset.mxe,q=MXSEL[k],i=(k=='x'?S.x:S.a).findIndex(z=>z.id===[...q.ids][0]);if(i>=0){q.on=false;q.ids.clear();mxAll();k=='x'?fpEdit(i):eaDlg(i)}return}
+ if(b=t.closest('[data-mxd]')){mxDel(b.dataset.mxd,new Set(MXSEL[b.dataset.mxd].ids));return}
+ if(b=t.closest('[data-mxn]')){mxPop(b);return}
+ if(t.closest('[data-mxfc]')||t.classList.contains('mxsc')){mxClose();return}
+ if(b=t.closest('[data-mxfe]')){const i=S.x.findIndex(z=>z.id===b.dataset.mxfe);mxClose();if(i>=0)fpEdit(i);return}
+ if(b=t.closest('[data-mxfd]')){mxDel('x',new Set([b.dataset.mxfd]));return}
+ if(t.closest('.mxsh .mxb1,.mxsh [data-open]')){setTimeout(mxClose,0);return}
+ const r=t.closest('[data-mxi]');if(!r||t.closest('[data-open]'))return;const k=r.dataset.mxk,id=r.dataset.mxi,q=MXSEL[k];
+ if(q.on&&!r.closest('#va')){q.ids.has(id)?q.ids.delete(id):q.ids.add(id);mxAll();return}
+ mxSheet(k,id)});
 /* ---------- eventos ---------- */
 document.addEventListener('click',e=>{const t=e.target,b=t.closest('button'),d=b?b.dataset:{};
  if(!b){const op=t.closest('[data-open]');if(op){const k=t.closest('[data-k]');openP(op.dataset.open,k?k.dataset.k:null);return}
