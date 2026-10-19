@@ -393,39 +393,203 @@ button.xc:not(:disabled):hover,button.xc:active,button.xc:focus-visible{backgrou
 #ta .acts button,#tx td.ac .acts button,#ta .acts button.be,#ta .acts button.bd,#tx .acts button.be,#tx .acts button.bd{width:44px!important;min-width:44px!important;height:44px!important;padding:0!important}
 }
 
-/* ===== f5h: vista estrecha (extracciones y animales) + ficha + bloqueo de scroll del "Ver todos" ===== */
-html.vlock{overflow:hidden}
+/* ===== f5i: filas, ficha, selección y botón + en todos los anchos ===== */
+html.vlock{overflow:hidden}html.vlock .mxfab{display:none}
 #va{overscroll-behavior:contain;touch-action:none}.vab{overscroll-behavior:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch;min-height:0}
-#txm,#tam{display:none}
-@media(max-width:900px){
 .sc:has(>#tx),.sc:has(>#ta),#va_tx,#va_ta{display:none!important}
-#txm,#tam{display:block}
+body{padding-bottom:84px}
+#par{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}#par>.c{margin-top:0!important;min-width:0}
+@media(min-width:1100px){#par{grid-template-columns:1fr 1fr;align-items:start}}
 .mxa{display:flex;align-items:center;gap:8px;padding:6px 0}.mxa b{flex:1;font-size:14px;color:var(--tx)}
 .mxs2{height:36px;display:flex;align-items:center;gap:6px;border:1px solid var(--br);background:var(--card);color:var(--tx);border-radius:9px;padding:0 12px;font-weight:700;font-size:13px;font-family:inherit}
 .mxi{width:36px;height:36px;border:1px solid var(--br);background:var(--card);color:var(--tx);border-radius:9px;font-size:16px;padding:0}.mxi[disabled]{opacity:.4}.mxi.del{color:#b03a12;border-color:#e3b9a8}
 .mxl{background:var(--card);border:1px solid var(--br);border-radius:12px;overflow:hidden}
-.mxr{display:flex;align-items:center;gap:8px;padding:6px 10px;border-top:1px solid var(--br);min-height:46px;box-sizing:border-box;cursor:pointer}.mxr:first-child{border-top:0}
+.mxr{display:flex;align-items:center;gap:8px;padding:7px 10px;border-top:1px solid var(--br);min-height:56px;box-sizing:border-box;cursor:pointer}.mxr:first-child{border-top:0}
 .mxr:hover{background:rgba(201,128,58,.07)}.mxr.on{background:rgba(201,128,58,.14);box-shadow:inset 0 0 0 2px var(--or)}
 .mxc{width:22px;height:22px;flex:none;border-radius:6px;border:2px solid #9fb0a4;background:var(--card);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}.mxc.on{background:#1b3b2b;border-color:#1b3b2b}
 .mxb{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
 .mx1{display:flex;align-items:center;gap:8px;min-width:0}
-.mx2{display:grid;grid-template-columns:76px 54px 38px 1fr 20px 20px;align-items:center;gap:4px;font-size:13.5px}.mx2>*{min-width:0;white-space:nowrap}
-.ma{display:grid;grid-template-columns:54px 76px 58px 1fr 22px;align-items:center;gap:6px;font-size:14px}.ma>*{min-width:0;white-space:nowrap}
+.mx2{display:grid;grid-template-columns:78px 56px 44px 1fr 20px 20px;align-items:center;gap:4px;font-size:13.5px}.mx2>*{min-width:0;white-space:nowrap}
+.mx2a{display:flex;align-items:center;gap:12px;font-size:14px}
 .mxes{overflow:hidden}.mxes .p{font-size:12px}
 .mxr .stc{font-size:12px;white-space:nowrap}
-.mxm{font-weight:700;font-size:15px;text-decoration:underline;text-underline-offset:2px;flex:none;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+.mxm{font-weight:700;font-size:15px;text-decoration:underline;text-underline-offset:2px;flex:none;max-width:120px;overflow:hidden;text-overflow:ellipsis}
 .mxt{font-size:11px;font-weight:700;padding:1px 7px;border-radius:7px;background:var(--md);flex:none}.mxt.d{background:#f3d9cf;color:#8f2f0d}.mxt.t{background:#f5e6bd;color:#7a5410}
 .mxs{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;color:var(--tx)}.mxd{flex:none;font-size:12.5px;color:var(--mu)}
-.mxe{overflow:hidden;text-overflow:ellipsis;color:var(--mu);font-size:12.5px}.mxg{text-align:left}
+.mxe{overflow:hidden;text-overflow:ellipsis;color:var(--mu);font-size:12.5px}.mxg{text-align:right;font-variant-numeric:tabular-nums}
 .sxm{font-size:15px}.sxm.m{color:#2b6a8f}.sxm.h{color:#a63d6b}
 .mxn{cursor:pointer}
 .mxsc{position:fixed;inset:0;background:rgba(20,32,25,.5);z-index:40}
-.mxsh{position:fixed;left:0;right:0;bottom:0;z-index:41;background:var(--card);color:var(--tx);border-radius:20px 20px 0 0;padding:14px 16px calc(16px + env(safe-area-inset-bottom));max-height:85vh;overflow:auto;overscroll-behavior:contain}
-.mxh{padding-right:44px;margin-bottom:10px}.mxh .mxm{font-size:20px;max-width:none}
-.mxcl{position:absolute;top:6px;right:6px;width:44px;height:44px;border:0;background:none;color:var(--tx);font-size:20px}
-.mxk{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}.mxk .w{grid-column:1/3}.mxk .k{font-size:11px;letter-spacing:.4px;text-transform:uppercase;color:var(--mu)}.mxk .v{font-size:16px;font-weight:600}
-.mxbt{display:flex;gap:10px;margin-top:16px}.mxbt.mxw{flex-wrap:wrap}.mxb1{flex:1 1 40%;height:48px;border-radius:10px;border:1px solid var(--br);background:var(--card);color:var(--tx);font-weight:700;font-size:15px;font-family:inherit}.mxb1.del{color:#b03a12;border-color:#e3b9a8}
-.mxpop{position:fixed;right:12px;left:auto;max-width:80vw;background:#1d2a22;color:#fff;font-size:13px;padding:7px 10px;border-radius:9px;z-index:60;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.mxsh{position:fixed;left:0;right:0;bottom:0;z-index:41;background:#fff;color:#1d2a22;border-radius:20px 20px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto;overscroll-behavior:contain}
+@media(min-width:700px){.mxsh{left:50%;right:auto;bottom:auto;top:50%;transform:translate(-50%,-50%);width:min(560px,92vw);border-radius:16px}}
+.mxh{padding-right:44px;margin-bottom:6px}.mxh .mxm{font-size:22px;max-width:none;color:#1b3b2b}.mxh .mxd{color:#4a5a50;margin-left:auto}
+.mxsp{font-size:17px;color:#1d2a22}.mxsp i{color:#4a5a50;margin-left:4px}.mxsp em{display:block;font-size:13px;color:#8f2f0d;font-style:normal}
+.mxcl{position:absolute;top:6px;right:6px;width:44px;height:44px;border:0;background:none;color:#1d2a22;font-size:20px}
+.mxsec h3{margin:18px 0 8px;padding-bottom:4px;border-bottom:1px solid #d5ddd6;font-size:12px;letter-spacing:.7px;text-transform:uppercase;color:#2f6b47}
+.mxk{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}.mxk .w{grid-column:1/3}.mxk .k{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#4a5a50}.mxk .v{font-size:17px;font-weight:600;color:#1d2a22}
+.mxnt{font-size:15px;color:#1d2a22;background:#f1f4f0;border-radius:10px;padding:9px 11px}
+.mxir{display:flex;align-items:center;padding:4px 0;font-size:15px;color:#2b3a31}.mxir span{flex:1}.mxir b{color:#1d2a22}.mxft{margin-top:6px;font-size:12.5px;color:#4a5a50}
+.mxbt{display:flex;gap:10px;margin-top:18px}.mxbt.mxw{flex-wrap:wrap;margin-top:0}.mxb1{flex:1 1 40%;height:48px;border-radius:10px;border:1px solid #9fb0a4;background:#fff;color:#1b3b2b;font-weight:700;font-size:15px;font-family:inherit}.mxb1.del{color:#b03a12;border-color:#e3b9a8}
+.mxpop{position:fixed;right:12px;max-width:80vw;background:#1d2a22;color:#fff;font-size:13px;padding:7px 10px;border-radius:9px;z-index:60;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.mxfab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:56px;height:56px;border-radius:50%;border:0;background:#1b3b2b;color:#fff;font-size:30px;line-height:1;z-index:26;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.mxfs{position:fixed;inset:0;background:rgba(20,32,25,.45);z-index:25}
+.mxmn{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:27;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.mxmn button{height:48px;display:flex;align-items:center;gap:10px;background:#fff;color:#1b3b2b;border:0;border-radius:999px;padding:0 18px 0 14px;font-weight:700;font-size:15px;font-family:inherit;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+/* ===== f5j: ficha en verde oscuro, animación del botón +, manadas en filas ===== */
+.sc:has(>#tm),#va_tm{display:none!important}#tmm{display:block}
+.mmr .mx1{flex-wrap:nowrap}.mmal{display:flex;gap:4px;flex:none}.mmid{display:flex;align-items:center;gap:4px;font-weight:700;font-size:15px;white-space:nowrap;cursor:pointer;flex:none}.mmcu{display:flex;align-items:center;gap:4px;flex:none;font-size:13px}.mmac{display:flex;gap:4px;flex:none}.mmac button{width:36px;height:36px}
+.mxsh{background:#1f3d2e;color:#f3ecdc;border:1px solid rgba(243,236,220,.16);box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.mxsc{background:rgba(10,22,15,.62)}
+.mxh .mxm{color:#f3ecdc}.mxh .mxd{color:#b8c7bc}
+.mxsp{color:#f3ecdc}.mxsp i{color:#e0a15a}.mxsp em{color:#ffb59c}
+.mxcl{color:#f3ecdc}
+.mxsec h3{color:#e0a15a;border-bottom-color:rgba(243,236,220,.2)}
+.mxk .k{color:#b8c7bc}.mxk .v{color:#f3ecdc}
+.mxsh .stc,.mxsh .stc *{color:#e0a15a}
+.mxsh .sxm.m{color:#7cc2ea}.mxsh .sxm.h{color:#f0a1c4}
+.mxsh .mxt{background:rgba(243,236,220,.14);color:#f3ecdc}.mxsh .mxt.d{background:#6e2a14;color:#ffd9cb}.mxsh .mxt.t{background:#6b4e12;color:#ffe9b0}
+.mxsh .mxes{background:#f3ecdc;border-radius:999px;padding:1px 6px}
+.mxnt{background:#27493a;color:#f3ecdc}
+.mxir{color:#d9e2db}.mxir b{color:#f3ecdc}.mxft{color:#b8c7bc}
+.mxvd{border-radius:10px;padding:9px 12px;margin-bottom:8px;display:flex;flex-direction:column;gap:2px}.mxvd b{font-size:16px}.mxvd span{font-size:13px;opacity:.9}
+.mxvd.g{background:#2f6b47;color:#e4f7ea}.mxvd.w{background:#8f2f0d;color:#ffe3d8}.mxvd.n{background:#3b5547;color:#e8efe9}
+.mxb1{background:#27493a;color:#f3ecdc;border-color:rgba(243,236,220,.3)}.mxb1:first-child{background:#c9803a;color:#14291f;border-color:#c9803a}.mxb1.del{background:transparent;color:#ffb59c;border-color:#c46a52}
+.mxfab{transition:transform .28s cubic-bezier(.3,1.5,.5,1),background .2s}.mxfab.open{transform:rotate(135deg);background:#c9803a}
+.mxfs{animation:mxf .2s ease both}.mxfs.out{animation:mxfo .17s ease both}
+@keyframes mxf{from{opacity:0}to{opacity:1}}@keyframes mxfo{to{opacity:0}}
+.mxmn button{animation:mxp .34s cubic-bezier(.2,1.3,.4,1) both;transform-origin:100% 100%}
+.mxmn button:nth-child(3){animation-delay:0s}.mxmn button:nth-child(2){animation-delay:.06s}.mxmn button:nth-child(1){animation-delay:.12s}
+@keyframes mxp{from{opacity:0;transform:translateY(28px) scale(.5)}to{opacity:1;transform:none}}
+.mxmn.out button{animation:mxo .16s ease both}@keyframes mxo{to{opacity:0;transform:translateY(18px) scale(.6)}}
+@media(prefers-reduced-motion:reduce){.mxfab,.mxfs,.mxmn button{animation:none!important;transition:none!important}}
+/* ===== f5k: listas con 6 líneas y scroll, manadas con gráfico, ficha definida ===== */
+.mxs6{overflow-y:auto;overflow-x:hidden}.mxs6.kx,.mxs6.ka{max-height:342px}.mxs6.km{max-height:552px}
+#va .vap{width:min(1100px,100%);height:100%}
+.mmr{align-items:stretch}.mmr .mx1{gap:8px}
+.mmid{display:flex;align-items:center;gap:4px;font-weight:700;font-size:15px;white-space:nowrap;cursor:pointer;flex:none}
+.mmal{display:flex;gap:4px;flex:1;min-width:0;flex-wrap:nowrap;overflow:hidden}.mmal .p{white-space:nowrap}
+.mmgrid{display:flex;gap:10px;align-items:center}.mml{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.mmsp{font-size:14.5px}
+.mmn{display:flex;align-items:center;font-size:13px;color:var(--mu)}.mmac{display:flex;gap:4px}.mmac button{width:34px;height:34px}
+.mmg{width:128px;flex:none}.mmg .gchart{max-width:128px}
+.mxsp b{display:block;font-size:19px}.mxsp i{display:block;font-size:14px;margin:2px 0 0}
+.mxk .mkt{background:#27493a;border:1px solid rgba(243,236,220,.14);border-radius:10px;padding:9px 12px}.mxk .mkw{grid-column:1/3}
+.mxk .mkl{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#b8c7bc;margin-bottom:3px}
+.mxk .mkv{font-size:17px;font-weight:600;color:#f3ecdc}
+.mxk{gap:10px}
+/* ===== f5l: barra de genética, contrastes de etiquetas, Ver tabla en pantalla completa ===== */
+.mxt{background:#dfe9e2;color:#1b3b2b}.mxt.d{background:#f3d9cf;color:#8f2f0d}.mxt.t{background:#f5e6bd;color:#7a5410}
+.mxr .p.n,.mxsh .p.n{background:#dfe6e0;color:#1d2a22}
+.mxsh .mxes{background:none;padding:0}.mxsh .p{font-size:13px}
+.mxs6.km{max-height:600px}
+.mmr .mxb{gap:6px}.mmal .p{font-size:12px}
+.gbar{display:flex;align-items:center;gap:8px}
+.gtrk{position:relative;flex:1;height:12px;border-radius:6px;background:#dfe6e0;overflow:hidden}
+.gtrk i{position:absolute;top:0;bottom:0;display:block}
+.gpo{background:rgba(95,125,106,.3)}.gpr{border-radius:6px;background:#c9803a}.gbar.ok .gpr{background:#2f8a52}.gbar.no .gpr{background:#b03a12}
+.gtk{width:2px;background:rgba(27,59,45,.55);z-index:1}
+.gtx{flex:none;min-width:78px;text-align:right;font-size:13px;font-weight:700;color:var(--tx)}
+.gnone{font-size:12.5px;color:var(--mu)}
+.mmn{display:flex;align-items:center;font-size:13px}.mmsp{flex:1;min-width:0}
+.mxvt{width:100%;margin-top:8px;height:44px;display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:#a8651f;border:1.5px solid #c9803a;border-radius:10px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;transition:background .18s,color .18s,transform .12s,box-shadow .18s}
+.mxvt small{font-weight:600;opacity:.85}
+.mxvt:hover{background:#c9803a;color:#fff;box-shadow:0 3px 10px rgba(201,128,58,.35)}.mxvt:active{transform:scale(.98)}
+.c.mxfull{position:fixed!important;inset:0;z-index:19;margin:0!important;border-radius:0;overflow:auto;overscroll-behavior:contain;background:var(--bg);padding:0 14px 28px;box-sizing:border-box;-webkit-overflow-scrolling:touch}
+@media(min-width:900px){.c.mxfull{padding:0 max(14px,calc(50vw - 560px)) 28px}}
+.mxfull>h2{display:none}.mxfull .mxs6{max-height:none!important;overflow:visible}.mxfull .mxvt{display:none}
+.mxfh{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:10px;padding:12px 0;background:var(--bg)}.mxfh b{flex:1;font-size:18px;color:var(--tx)}
+.mxfh button{height:40px;padding:0 14px;border:1.5px solid #c9803a;background:transparent;color:#a8651f;border-radius:10px;font-weight:700;font-size:14px;font-family:inherit;transition:background .18s,color .18s}.mxfh button:hover{background:#c9803a;color:#fff}
+@media(prefers-reduced-motion:reduce){.mxvt,.mxfh button{transition:none}}
+/* ===== f5m: Manadas — pantalla ancha con la curva y pantalla estrecha con barra de genética explicada ===== */
+.mmr .mxb.mmb{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"id al cu" "ln ln ln" "tx tx ac";gap:6px 8px;align-items:center;width:100%}
+.mmid{grid-area:id}.mmal{grid-area:al}.mmcu{grid-area:cu}.mmb>.gbar{grid-area:ln}.mmtx{grid-area:tx}.mmac{grid-area:ac;justify-self:end}.mmbell{display:none}
+.mmtx{min-width:0;font-size:13px;color:var(--mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mmtx b{color:var(--tx);font-size:14px}.mmtx span:before{content:' · '}
+.gcol{flex:1;min-width:0}
+.gtrk{position:relative;height:14px;border-radius:7px;overflow:hidden;border:1px solid rgba(27,59,45,.25)}
+.gtrk i{position:absolute;display:block}.gtrk .gpr{top:2px;bottom:2px;border-radius:5px;background:#1b3b2d}.gtrk .gpo{top:50%;height:3px;margin-top:-1.5px;background:rgba(27,59,45,.55)}
+.gsc{position:relative;height:12px;font-size:10px;color:var(--mu)}.gsc span{position:absolute;top:1px;transform:translateX(-50%)}
+.gtx{flex:none;width:92px;display:flex;flex-direction:column;align-items:flex-end;line-height:1.15}.gtx b{font-size:14px;color:var(--tx)}.gtx small{font-size:11.5px;font-weight:700}
+.gbar.ok .gtx small{color:#1f7a45}.gbar.no .gtx small{color:#b03a12}.gbar.qu .gtx small{color:#a8651f}
+.gbar{align-items:flex-start}
+@media(min-width:700px){
+.mmr .mxb.mmb{grid-template-columns:max-content minmax(60px,1fr) minmax(160px,1.5fr) 134px auto auto;grid-template-areas:"id al tx bell cu ac";gap:8px 14px}
+.mmbell{display:block;grid-area:bell;width:132px}.mmbell .gchart{max-width:132px}
+.mmb>.gbar{display:none}
+.mmtx{white-space:normal}.mmtx b,.mmtx span{display:block}.mmtx span:before{content:none}
+.mxs6.km{max-height:372px}
+}
+/* ===== f5n: Ver tabla discreto, fichas con símbolos, botón + en arco, manadas con datos y curva ===== */
+.mxa{flex-wrap:nowrap}.mxa .hint{flex:1}
+.mxvt{width:auto;margin:0 0 0 auto;height:32px;padding:0 10px;gap:6px;font-size:12.5px;font-weight:600;color:var(--mu);border:1px solid var(--br);border-radius:8px;background:transparent;box-shadow:none;white-space:nowrap}
+.mxvt:hover{border-color:#c9803a;color:#a8651f;background:rgba(201,128,58,.08);box-shadow:none}
+.mxbt{justify-content:flex-end;gap:10px;margin-top:14px}.mxbt.mxw{flex-wrap:wrap}
+.mxb1{flex:none;width:46px;height:46px;border-radius:50%;padding:0;font-size:19px;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+.mxmn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:56px;height:56px;z-index:27;display:block}
+.mxmn button{position:absolute;right:4px;bottom:4px;width:48px;height:48px;padding:0;gap:0;justify-content:center;border-radius:50%;background:#fff;color:#1b3b2b;box-shadow:0 3px 12px rgba(0,0,0,.3);transform:translate(var(--x),var(--y));animation:mxa .38s cubic-bezier(.2,1.35,.4,1) both;transform-origin:50% 50%}
+.mxmn button:nth-child(3){animation-delay:0s}.mxmn button:nth-child(2){animation-delay:.05s}.mxmn button:nth-child(1){animation-delay:.1s}
+.mxmn button:hover{background:#c9803a;color:#fff}
+@keyframes mxa{from{opacity:0;transform:translate(0,0) scale(.3)}to{opacity:1;transform:translate(var(--x),var(--y)) scale(1)}}
+.mxmn.out button{animation:mxao .18s ease both}
+@keyframes mxao{from{opacity:1;transform:translate(var(--x),var(--y))}to{opacity:0;transform:translate(0,0) scale(.3)}}
+.mmr .mxb.mmb{display:grid;grid-template-columns:1fr 126px;grid-template-areas:"h bg" "tx bg" "cp bg" "cu ac";gap:5px 10px;align-items:center;width:100%}
+.mmh{grid-area:h;display:flex;align-items:center;gap:8px;min-width:0;flex-wrap:wrap}.mmtx{grid-area:tx}.mmcp{grid-area:cp}.mmbg{grid-area:bg}.mmcu{grid-area:cu}.mmac{grid-area:ac;justify-self:end}
+.mmbell{display:block;grid-area:auto;width:100%}.mmbell .gchart{max-width:100%}
+.mmgv{display:flex;flex-direction:column;align-items:center;line-height:1.15;margin-top:3px}.mmgv b{font-size:13.5px;color:var(--tx)}.mmgv small{font-size:11.5px;font-weight:700}
+.mmgv small.ok{color:#1f7a45}.mmgv small.no{color:#b03a12}.mmgv small.qu{color:#a8651f}
+.mmcp{display:flex;flex-direction:column;gap:3px;min-width:0}.mmcp>b{font-size:13px;color:var(--tx)}
+.cpb{display:flex;height:12px;border-radius:6px;overflow:hidden;background:#e4ebe5}.cpb i{display:block;min-width:3px}
+.cpl{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:12px;color:var(--mu)}.cpl span{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}.cpl i{width:8px;height:8px;border-radius:2px;display:inline-block}
+.mxs6.km{max-height:720px}
+@media(min-width:700px){
+.mmr .mxb.mmb{grid-template-columns:minmax(170px,1.3fr) minmax(190px,1.2fr) 176px auto auto;grid-template-areas:"h cp bg cu ac" "tx cp bg cu ac";gap:6px 18px}
+.mmbell{width:100%}
+.mxs6.km{max-height:560px}
+}
+@media(prefers-reduced-motion:reduce){.mxmn button{animation:none}}
+/* ===== f5o: botón + centrado y pegado al contenido; manadas más generosas en pantalla ancha ===== */
+.mxfab{right:var(--mxr,16px);display:flex;align-items:center;justify-content:center;padding:0;font-size:0}
+.mxfab svg{display:block}.mxfab.open{transform:rotate(45deg)}
+.mxmn{right:var(--mxr,16px);pointer-events:none}.mxmn button{pointer-events:auto}
+@media(min-width:700px){
+.mmr{padding:12px 16px}
+.mmr .mxb.mmb{grid-template-columns:minmax(190px,1.2fr) minmax(210px,1.3fr) minmax(200px,240px) auto auto;gap:8px 28px;align-items:center}
+.mmid{font-size:17px}.mmal .p{font-size:13px}
+.mmtx{font-size:14px}.mmtx b{font-size:16px}
+.mmcp>b{font-size:15px}.cpb{height:16px;border-radius:8px}.cpl{font-size:13.5px;gap:3px 12px}
+.mmgv b{font-size:16px}.mmgv small{font-size:13px}
+.mmac button{width:40px;height:40px}.mmcu{font-size:14px}
+}
+/* ===== f5p: ventana flotante «Nuevo animal» (mismos estilos que la de pieza) ===== */
+#fa{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30;overflow:auto;display:flex;justify-content:center;align-items:flex-start;padding:20px}
+#fa .qr.c2,#fa .qr.c3,#fa .qr.c5,#fa .qr.ct{display:grid;width:100%;gap:8px}
+#fa .qr.c3{grid-template-columns:repeat(3,1fr)}
+#fa .qr.ct{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+#fa .qr.c5 .qb{padding:11px 2px}
+#fa .qr.c5 .qb{font-size:14px}
+#fa,#st,#dg{background:rgba(8,14,10,.66)}
+#fa select,#fa input,#st select,#st input,#dg input,#hp select,#hp input,#fd select,#fd input,#hl input,.dpop input{background:#18241b;color:var(--tx);border-color:rgba(244,239,224,.2)}
+#fa .c h2,#st .c h2,#dg .c h2,#hl h2{color:#c9803a}
+#fa,#st,#dg,#hp,#hl,#fd{overscroll-behavior:contain}
+#fa .fr,#st .fr{grid-template-columns:130px minmax(0,1fr)}
+#fa .qr,#st .qr{min-width:0}
+#na{display:none!important}
+#fa[hidden]{display:none}
+/* ===== f5q: ventana «Nuevo animal» compacta y adaptable ===== */
+#fa{align-items:flex-start;padding:12px 12px calc(12px + env(safe-area-inset-bottom))}
+#fa .c.fw{width:min(460px,100%);margin:auto;max-height:none}
+#fa h2{margin:0 0 12px}
+#fa .fr{display:grid!important;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:4px 10px;margin:0 0 10px}
+#fa .lb{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--mu);white-space:nowrap}
+#fa .qr,#fa .qr.c2,#fa .qr.c3,#fa .qr.c5{display:flex!important;flex-wrap:wrap;gap:6px;width:auto!important;grid-template-columns:none!important;margin:0!important}
+#fa .qb{flex:0 0 auto;width:auto;min-width:44px;height:40px;padding:0 14px;font-size:14px}
+#fa select,#fa input#an{width:100%;min-width:0;height:40px;box-sizing:border-box;font-size:15px}
+#fa .hint{font-size:12.5px}
+#fa .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end;margin-top:12px}
+#fa .bar .hint{flex:1 1 100%;margin:0}
+#fa .bar button{height:44px;padding:0 18px}
+@media(max-width:480px){
+#fa .fr{grid-template-columns:1fr;gap:5px}
+#fa .qb{flex:1 1 0;min-width:0;padding:0 8px}
+#fa .qr.c5 .qb{flex:1 1 0}
 }
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle class="f" cx="12" cy="12" r="4"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 5h11l-2.5 4 2.5 4H6"/><circle class="f" cx="6" cy="4" r="1.5"/></symbol><symbol id="i-dna" viewBox="0 0 24 24"><path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9M9.5 7h5M9.5 17h5"/><circle class="f" cx="12" cy="12" r="1.4"/></symbol><symbol id="i-hg" viewBox="0 0 24 24"><path d="M8 3h8v4l-4 5 4 5v4H8v-4l4-5-4-5V3z"/><circle class="f" cx="12" cy="18" r="1.3"/></symbol><symbol id="i-cup" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 20h8"/><circle class="f" cx="12" cy="7.5" r="1.3"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle class="f" cx="12" cy="15.5" r="1.5"/></symbol><symbol id="i-aim" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle class="f" cx="12" cy="12" r="1.6"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z" fill="currentColor" fill-opacity=".3"/><circle cx="12" cy="12" r="3.6"/><circle class="f" cx="12" cy="12" r="1.3"/></symbol><symbol id="i-lens" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><circle class="f" cx="10.5" cy="10.5" r="1.6"/></symbol><symbol id="i-chk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7.5 12.5l3 3 6-6.5"/></symbol><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.5 2.5 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/><circle class="f" cx="6.5" cy="17.5" r="1.1"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1.1.9-1.1 1.6"/><circle class="f" cx="12" cy="16.6" r="1.1"/></symbol><symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 20v-8M12 12c0-3.2-2.2-5-6-5 0 3.4 2.2 5 6 5zM12 14c0-2.6 1.9-4.5 6-4.5 0 2.6-1.9 4.5-6 4.5z"/><circle class="f" cx="12" cy="20.5" r="1.1"/></symbol><symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4.5l9 15.5H3z"/><path d="M12 10v4"/><circle class="f" cx="12" cy="17" r="1"/></symbol><symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5h6M8.5 10h7M8.5 14h5"/><circle class="f" cx="12" cy="4.5" r="1.2"/></symbol><symbol id="i-male" viewBox="0 0 24 24"><circle cx="10" cy="14" r="5.5"/><path d="M14 10l6-6M14.5 4H20v5.5"/><circle class="f" cx="10" cy="14" r="1.4"/></symbol><symbol id="i-female" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M12 14.5V21M9 18h6"/><circle class="f" cx="12" cy="9" r="1.4"/></symbol><symbol id="i-gear" viewBox="0 0 24 24"><path d="M18.43 10.52L21.31 10.69L21.31 13.31L18.43 13.48A6.6 6.6 0 0 1 17.60 15.50L17.60 15.50L19.51 17.66L17.66 19.51L15.50 17.60A6.6 6.6 0 0 1 13.48 18.43L13.48 18.43L13.31 21.31L10.69 21.31L10.52 18.43A6.6 6.6 0 0 1 8.50 17.60L8.50 17.60L6.34 19.51L4.49 17.66L6.40 15.50A6.6 6.6 0 0 1 5.57 13.48L5.57 13.48L2.69 13.31L2.69 10.69L5.57 10.52A6.6 6.6 0 0 1 6.40 8.50L6.40 8.50L4.49 6.34L6.34 4.49L8.50 6.40A6.6 6.6 0 0 1 10.52 5.57L10.52 5.57L10.69 2.69L13.31 2.69L13.48 5.57A6.6 6.6 0 0 1 15.50 6.40L15.50 6.40L17.66 4.49L19.51 6.34L17.60 8.50A6.6 6.6 0 0 1 18.43 10.52Z"/><circle cx="12" cy="12" r="2.8"/></symbol><symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 5v10M7.5 10.5L12 15l4.5-4.5M5 19.5h14"/><circle class="f" cx="12" cy="4.2" r="1.2"/></symbol><symbol id="i-ul" viewBox="0 0 24 24"><path d="M12 15V5M7.5 9.5L12 5l4.5 4.5M5 19.5h14"/><circle class="f" cx="12" cy="15.8" r="1.2"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V4.8h5V7M6.5 7l1 12.2h9L17.5 7M10 10.5v5.5M14 10.5v5.5"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/><circle class="f" cx="12" cy="14.5" r="1.4"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M6 4.5h9.5L19 8v11.5H6z"/><path d="M15.5 4.5V8H19M9.5 12.5h6M9.5 16h4"/><circle class="f" cx="9.5" cy="9" r="1"/></symbol></defs></svg>
@@ -756,7 +920,7 @@ function render(){const m=S.act,cy=yr(S.maps[m]),f=$('fs').value,HM=S.h.filter(h
  const pc=['o','n','a','b'],pe=['','g','a','b'],eq=$('mE').value,rq=$('mR').value,qq=$('mQ').value.toLowerCase();
  $('tm').innerHTML='<tr>'+mth('id','ID')+mth('sp','Especie')+mth('sec','Sector','cs')+mth('n','Animales')+mth('g','Genética','cg')+mth('es','Estado','',' <button class="g" data-help="estados" style="padding:0 6px">?</button>')+mth('urg','Alertas','',' <button class="g" data-help="alertas" style="padding:0 6px">?</button>')+mth('vig','Últ. avist. (Año)','cu')+'<th></tr>'+msort(R).filter(r=>(!eq||r.es.startsWith(eq))&&(rq===''||r.v.p==+rq)&&(!qq||(r.h.id+' '+r.h.sp+' '+r.h.sec).toLowerCase().includes(qq))).map(r=>{const h=r.h,i=S.h.indexOf(h);
   return`<tr><td data-open="${h.id}" style="cursor:pointer;font-weight:600;white-space:nowrap"><span style="display:inline-block;min-width:1.7em;text-align:right">${r.v.p?`<svg class="eye e${r.v.p}" viewBox="0 0 24 24" width="22" height="22" role="img"><title>${r.v.t}</title><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg>`:''}</span> ${h.id} <span style="display:inline-block;min-width:1.7em">${r.n>=CFG.max?`<span title="La manada ha llegado a su máximo de individuos (${CFG.max})">🔒</span>`:''}</span><td style="text-align:left;white-space:nowrap">${esc(h.sp)}<td class="cs" title="${esc(sct(h))}" style="font-size:12px;white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis">${esc(scd(h))}<td>${r.n}<td class="cg" ${r.gv?`title="Probable ${gv(r.gv)} · posible ${Math.round(r.gv.ulo)}–${Math.round(r.gv.uhi)}%"`:''}>${r.gv?gblk(r.gv,r.gd,128,46):''}<td><span class="p ${ec(r.es)}">${r.es}</span><td class="l al" data-open="${h.id}" style="cursor:pointer">${chips(r)}<td class="cu" style="white-space:nowrap"><button class="g" data-seen="${i}" title="Confirmar avistamiento (después no se podrá modificar)">✔</button> <span class="lyv ${r.v.p?'e'+r.v.p:''}" title="${r.v.p?r.v.t:'Al día'}">${h.ly??'—'}</span><td class="ac"><div class="acts"><button class="be" data-mfe="${i}" title="Editar manada">✎</button><button class="bd" data-dh="${i}" title="Eliminar manada">🗑</button></div></tr>`}).join('');
- limT('tm');setO($('aM'),o(ids,'Todas las manadas'));setO($('xM'),'<option value="">Todas las manadas</option>'+HM.map(h=>`<option>${h.id}</option>`).join('')+'<option>Otros</option>');
+ limT('tm');mmRender();setO($('aM'),o(ids,'Todas las manadas'));setO($('xM'),'<option value="">Todas las manadas</option>'+HM.map(h=>`<option>${h.id}</option>`).join('')+'<option>Otros</option>');
  const aM=$('aM').value,aS=$('aS').value,aE=$('aE').value,aT=+$('aT').value,aA=$('aA').value,AL=R.flatMap(r=>r.rows.map(x=>({...x,h:r.h}))),
  AF=AL.filter(x=>(!aM||x.h.id==aM)&&(!aS||x.a.sx==aS)&&(!aE||x.a.ed==aE)&&(!aT||(x.a.sx=='M'&&x.a.st==aT))&&(!aA||x.st==aA));
  $('aN').textContent=AF.length+' de '+AL.length+' animales';
@@ -767,10 +931,16 @@ function render(){const m=S.act,cy=yr(S.maps[m]),f=$('fs').value,HM=S.h.filter(h
   return`<tr><td style="white-space:nowrap">${x.d==null?'Sin fecha':'d'+dd(x.d)+' · A'+yr(x.d)}<td class="l" ${h?`data-open="${esc(x.h)}" style="cursor:pointer;font-weight:600"`:''}>${esc(x.h)}<td class="l" ${bad?'style="background:var(--bad)" title="La especie no coincide con la de la manada"':''}>${esc(x.sp||'')}<td class="l">${esc(x.sec||'')}<td>${sx(x.sx)}<td>${AGE[x.ed]||''}<td class="stc">${stars(x.sx=='H'?0:x.st)}<td>${x.ge!=null?x.ge+'%':''}<td class="l">${esc(x.ty)}<td>${x.ok==null?'—':x.ok?'✅':'⚠ Revisar'}<td class="l">${esc(x.nt||'')}<td class="ac"><div class="acts"><button class="be" data-ex2="${i}" title="Editar extracción">✎</button><button class="bd" data-dx="${i}" title="Eliminar extracción">🗑</button></div></tr>`}).join('');
   limT('tx');mxRender();addRow(HM);panel(cy)}
 /* ---------- añadir desde Todos los animales ---------- */
-function addRow(HM){const e=$('na'),aM=$('aM').value;if(!HM.some(h=>h.id==qa.h))qa.h=aM||'';const c=HM.find(h=>h.id==qa.h),full=c&&S.a.filter(a=>a.h==c.id).length>=CFG.max,dis=!c||full?'disabled':'',
- b=(k,a)=>a.map(([v,t])=>`<button class="qb ${qa[k]==v?'on':''}" data-a${k}="${v}" ${dis}>${t}</button>`).join(' ');
- e.innerHTML=`<div class="mh${c?'':' need'}"><b>0 · Manada</b><select data-ah><option value="">Elige manada…</option>${HM.map(h=>`<option ${h.id==qa.h?'selected':''}>${h.id}</option>`).join('')}</select>${c?'':'<span class="hint">Elige primero la manada</span>'}</div>`+(full?'<p class="hint">🔒 La manada ha llegado a su máximo de individuos ('+CFG.max+'). Caza uno antes de añadir otro.</p>':'')+
- `<div style="margin-bottom:10px"><div><div class="qr"><b>1 · Sexo</b>${b('s',[['M','♂ Macho'],['H','♀ Hembra']])}</div>${qa.s?`<div class="qr"><b>2 · Edad</b>${b('e',[['J','Joven'],['A','Adulto'],['M','Maduro']])}</div>`:''}${qa.s=='M'&&qa.e&&qa.e!='J'?`<div class="qr"><b>3 · Estrellas</b>${b('t',[1,2,3,4,5].map(n=>[n,n+'★']))}</div>`:''}</div><label class="hint" style="display:block;margin-top:8px">Nota (opcional)<input id="an" value="${nota2.replace(/"/g,'&quot;')}" placeholder="Para este animal" style="width:100%"></label>${(qa.s=='H'&&qa.e||qa.s=='M'&&qa.e&&qa.t)&&c?`<div class="bar" style="justify-content:space-between;margin-top:8px"><span class="hint"><b>${qa.s=='H'?'Hembra':'Macho'} · ${AGE[qa.e]}${qa.s=='M'?' · '+qa.t+'★':''}</b> → ${c.id}</span><button data-aok ${dis}>Añadir animal</button></div>`:''}</div>`}
+function aaBox(){let e=$('fa');if(!e){e=document.createElement('div');e.id='fa';e.hidden=true;document.body.appendChild(e)}return e}
+function aaClose(){const e=$('fa');if(e)e.hidden=true;if(!VAO&&!document.querySelector('.c.mxfull'))document.documentElement.classList.remove('vlock')}
+function aaOpen(){const e=aaBox();e.hidden=false;document.documentElement.classList.add('vlock');addRow(S.h.filter(h=>h.mp==S.act))}
+function addRow(HM){const e=aaBox();if(e.hidden)return;const aM=$('aM')?$('aM').value:'';if(!HM.some(h=>h.id==qa.h))qa.h=aM||'';
+ const c=HM.find(h=>h.id==qa.h),full=!!c&&S.a.filter(a=>a.h==c.id).length>=CFG.max,dis=!c||full?'disabled':'',
+ chs=(k,a,off)=>a.map(([v,t])=>`<button class="qb ${qa[k]==v?'on':''}" data-a${k}="${v}" ${dis||off?'disabled':''}>${t}</button>`).join(' '),
+ row=(l,b,c2)=>`<div class="fr"><span class="lb">${l}</span><div class="qr ${c2||''}" style="margin:0">${b}</div></div>`,
+ star=qa.s=='M'&&qa.e&&qa.e!='J',done=!!c&&!full&&((qa.s=='H'&&qa.e)||(qa.s=='M'&&qa.e&&qa.t)),
+ sm=done?`${qa.s=='H'?'Hembra':'Macho'} · ${AGE[qa.e]}${qa.s=='M'?' · '+qa.t+'★':''} → ${c.id}`:(full?'':'Completa los datos');
+ e.innerHTML='<div class="c fw"><h2>🦌 Nuevo animal</h2>'+row('Manada',`<select data-ah style="flex:1 1 220px;min-width:0"><option value="">Elige manada…</option>${HM.map(h=>`<option value="${h.id}" ${h.id==qa.h?'selected':''}>${h.id} · ${esc(h.sp)}</option>`).join('')}</select>`)+(full?`<p class="hint">🔒 La manada ha llegado a su máximo de individuos (${CFG.max}). Caza uno antes de añadir otro.</p>`:'')+row('Sexo',chs('s',[['M','♂ Macho'],['H','♀ Hembra']]),'c2')+row('Edad',chs('e',[['J','Joven'],['A','Adulto'],['M','Maduro']],!qa.s),'c3')+(star?row('Estrellas',chs('t',[1,2,3,4,5].map(n=>[n,n+'★'])),'c5'):'')+row('Nota',`<input id="an" value="${String(nota2||'').replace(/"/g,'&quot;')}" placeholder="Opcional" style="width:100%">`)+`<div class="bar"><span class="hint" style="flex:1">${sm}</span><button class="g" data-aclose>Cerrar</button><button data-aok ${done?'':'disabled'}>Añadir animal</button></div></div>`}
 function addA(){GT=true;const c=S.h.find(h=>h.id==qa.h);if(!c||S.a.filter(a=>a.h==c.id).length>=CFG.max)return;snap();bk('Animal añadido');S.a.push({h:c.id,sx:qa.s,ed:qa.e,st:qa.s=='H'?0:+qa.t,nt:nota2.trim()});toast(`Añadido a ${c.id}: ${qa.s=='H'?'Hembra':'Macho'} ${AGE[qa.e]}${qa.s=='H'?'':' '+qa.t+'★'}`);qa.s=qa.e=qa.t='';nota2='';sv();render()}
 /* ---------- ajustes e historial ---------- */
 function syncCfg(){document.querySelectorAll('[data-c]').forEach(e=>{e.textContent=e.dataset.c=='max'?CFG.max:Math.round(CFG[e.dataset.c]*100)})}
@@ -858,52 +1028,100 @@ function limT(t){const tb=document.getElementById(t),n=tb.rows.length-1;[...tb.r
 function openAll(t){let m=document.getElementById('va');if(!m){m=document.createElement('div');m.id='va';document.body.appendChild(m)}
  const old=m.querySelector('.vab'),top=old?old.scrollTop:0,c=document.getElementById(t).cloneNode(true);c.querySelectorAll('.xr').forEach(r=>r.classList.remove('xr'));
  m.innerHTML=`<div class="vap"><div class="vah"><h2>${VT[t]}</h2><button class="xc" data-allx="1" title="Cerrar">✕</button></div><div class="vab"></div></div>`;
- const b=m.querySelector('.vab');b.appendChild(c);if((t=='tx'||t=='ta')&&mxn()){const k=t=='tx'?'x':'a',dd=(k=='x'?mxData:maData)(document.getElementById(t)),pre=k=='a'?mxPre(dd.map(d=>d.h)):'';b.innerHTML='<div class="mxl">'+dd.map(d=>(k=='x'?mxRow:maRow)(d,false,pre)).join('')+'</div>'}m.hidden=false;document.documentElement.classList.add('vlock');VAO=t;b.scrollTop=top}
+ const b=m.querySelector('.vab');b.appendChild(c);if(t=='tx'||t=='ta'||t=='tm')b.innerHTML=mxModalHtml(t);m.hidden=false;document.documentElement.classList.add('vlock');VAO=t;b.scrollTop=top}
 function closeAll(){const m=document.getElementById('va');if(m)m.hidden=true;VAO=null;document.documentElement.classList.remove('vlock')}
 document.addEventListener('click',e=>{const x=e.target,b=x.closest('[data-all]');if(b){openAll(b.dataset.all);return}if(x.closest('[data-allx]')||x.id=='va'||(VAO&&x.closest('#va [data-open]')))closeAll()});
 /* ---------- vista estrecha: extracciones y animales en filas + selección + ficha (lee las tablas ya filtradas y ordenadas) ---------- */
-function mxn(){return matchMedia('(max-width:900px)').matches}
+function mxn(){return true}
 function mxSx(v){return v=='M'?'<b class="sxm m">♂</b>':v=='H'?'<b class="sxm h">♀</b>':''}
-function mxkv(k,v,w){return`<div${w?' class="w"':''}><div class="k">${k}</div><div class="v">${v}</div></div>`}
+function mxkv(k,v,w){return`<div class="mkt${w?' mkw':''}"><div class="mkl">${k}</div><div class="mkv">${v}</div></div>`}
 function mxPre(a){const p=a.map(x=>(x.match(/^[^-]+-/)||[''])[0]);return p.length&&p[0]&&p.every(z=>z===p[0])?p[0]:''}
-function mxData(tb){const o=[];for(let r=1;r<tb.rows.length;r++){const c=tb.rows[r].cells;if(c.length<12)continue;const bt=c[11].querySelector('[data-dx]');if(!bt)continue;const x=S.x[+bt.dataset.dx];if(!x)continue;o.push({id:x.id,sxr:x.sx,f:c[0].textContent,m:c[1].textContent,h:c[1].textContent,mo:c[1].getAttribute('data-open'),sp:c[2].textContent,bad:c[2].getAttribute('style')?1:0,sec:c[3].textContent,ed:c[5].textContent,st:c[6].innerHTML,ge:c[7].textContent,ty:c[8].textContent,ok:c[9].textContent,nt:c[10].textContent})}return o}
+function mxData(tb){const o=[];for(let r=1;r<tb.rows.length;r++){const c=tb.rows[r].cells;if(c.length<12)continue;const bt=c[11].querySelector('[data-dx]');if(!bt)continue;const x=S.x[+bt.dataset.dx];if(!x)continue;o.push({id:x.id,sxr:x.sx,edr:x.ed,ger:x.ge,f:c[0].textContent,m:c[1].textContent,h:c[1].textContent,mo:c[1].getAttribute('data-open'),sp:c[2].textContent,bad:c[2].getAttribute('style')?1:0,sec:c[3].textContent,ed:c[5].textContent,st:c[6].innerHTML,ge:c[7].textContent,ty:c[8].textContent,ok:c[9].textContent,nt:c[10].textContent})}return o}
 function maData(tb){const o=[];for(let r=1;r<tb.rows.length;r++){const c=tb.rows[r].cells;if(c.length<7)continue;const bt=c[6].querySelector('[data-ea]');if(!bt)continue;const a=S.a[+bt.dataset.ea];if(!a)continue;const p=c[4].querySelector('.p'),n=c[5].querySelector('.ntt');o.push({id:a.id,sxr:a.sx,h:c[0].textContent,mo:c[0].getAttribute('data-open'),ed:c[2].textContent,st:c[3].innerHTML,es:p?p.outerHTML:'',nt:n?n.textContent:'',acts:c[6].querySelector('.acts')})}return o}
+function mxInt(v){const m=String(v==null?'':v).match(/-?\d+(?:[.,]\d+)?/);return m?Math.round(parseFloat(m[0].replace(',','.')))+' %':'—'}
+function mxSci(n){const k=String(n||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim(),T={'alce':'Alces alces','alce occidental':'Alces alces andersoni','ciervo cola blanca':'Odocoileus virginianus','ciervo comun':'Cervus elaphus','mula de las montanas':'Odocoileus hemionus','oso negro americano':'Ursus americanus','wapiti de las rocosas':'Cervus canadensis nelsoni','ciervo':'Cervus elaphus','ciervo rojo':'Cervus elaphus','corzo':'Capreolus capreolus','gamo':'Dama dama','jabali':'Sus scrofa','rebeco':'Rupicapra rupicapra','oso pardo':'Ursus arctos','oso negro':'Ursus americanus','lobo':'Canis lupus','zorro':'Vulpes vulpes','zorro rojo':'Vulpes vulpes','coyote':'Canis latrans','puma':'Puma concolor','wapiti':'Cervus canadensis','uapiti':'Cervus canadensis','ciervo de cola blanca':'Odocoileus virginianus','ciervo mulo':'Odocoileus hemionus','berrendo':'Antilocapra americana','borrego cimarron':'Ovis canadensis','muflon':'Ovis aries musimon','pavo salvaje':'Meleagris gallopavo','ganso del canada':'Branta canadensis','ganso canadiense':'Branta canadensis','anade real':'Anas platyrhynchos','porron bola':'Aythya marila','faisan':'Phasianus colchicus','urogallo':'Tetrao urogallus','liebre':'Lepus europaeus','perdiz roja':'Alectoris rufa','becada':'Scolopax rusticola','bisonte':'Bison bison','ciervo sika':'Cervus nippon'};return T[k]||''}
+function mxsec(t,b){return`<div class="mxsec"><h3>${t}</h3>${b}</div>`}
+function mxImp(d){const h=d.mo&&S.h.find(z=>z.id===d.mo);if(!h)return'<div class="mxnt">Pieza sin manada controlada: no afecta a ninguna manada.</div>';
+ let z=[];try{z=S.a.filter(a=>a.h===h.id&&a.sx!='H'&&a.ed!='J').map(gm).filter(Boolean).map(q=>q.m)}catch(e){}
+ const cnt=z.length,aft=cnt?z.reduce((p,q)=>p+q,0)/cnt:null,ge=typeof d.ger=='number'?d.ger:null,cuenta=d.sxr=='M'&&d.edr!='J',f1=v=>v.toFixed(1).replace('.',','),pill=(c,t,u)=>`<div class="mxvd ${c}"><b>${t}</b><span>${u}</span></div>`,
+ row=(k,v)=>`<div class="mxir"><span>${k}</span><b>${v}</b></div>`,ft='<div class="mxft">Estimación: genética real de la pieza frente a la estimada por la app para el resto de machos adultos. No cuenta nacimientos ni cambios posteriores.</div>';
+ if(!cuenta)return pill('n','● Sin efecto en la genética','Solo cuentan los machos no juveniles.')+row('Pieza',(d.sxr=='H'?'Hembra':'Joven'))+ft;
+ if(ge==null)return pill('n','● Sin dato de genética real','No se puede calcular el efecto.')+ft;
+ if(aft==null)return pill('w','▼ Sin machos adultos valorables','La manada se queda sin referencia genética.')+row('Genética de la pieza',f1(ge)+' %')+ft;
+ const bef=(aft*cnt+ge)/(cnt+1),dl=aft-bef,t=dl>=1?['g','▲ Mejora la genética de la manada','Se retiró un macho por debajo de la media.']:dl<=-1?['w','▼ Empeora la genética de la manada','Se retiró un macho por encima de la media.']:['n','● Efecto mínimo en la genética','La pieza estaba cerca de la media.'];
+ return pill(t[0],t[1],t[2])+row('Media de la manada',f1(bef)+' % → '+f1(aft)+' %')+row('Variación',(dl>=0?'+':'−')+f1(Math.abs(dl))+' pp')+row('Genética de la pieza',f1(ge)+' %')+row('Machos adultos',(cnt+1)+' → '+cnt)+ft}
+function mxWrap(){if($('par')||!$('tx')||!$('ta'))return;const a=$('tx').closest('.c'),b=$('ta').closest('.c');if(!a||!b)return;const w=document.createElement('div');w.id='par';a.before(w);w.append(a,b)}
+function mxFabPos(){const m=document.querySelector('main');if(!m)return;const r=m.getBoundingClientRect();document.documentElement.style.setProperty('--mxr',Math.max(16,Math.round(innerWidth-r.right+16))+'px')}
+function mxFab(){if($('mxfab')){mxFabPos();return}document.body.insertAdjacentHTML('beforeend','<button id="mxfab" class="mxfab" aria-label="Añadir" aria-expanded="false"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></button>');mxFabPos();addEventListener('resize',mxFabPos)}
+function mxMenu(open){const f=$('mxfab');if(!f)return;const old=document.querySelector('.mxmn'),sc=document.querySelector('.mxfs');f.classList.toggle('open',open);f.setAttribute('aria-expanded',open?'true':'false');
+ if(!open){if(old){old.classList.add('out');setTimeout(()=>{old.remove()},170)}if(sc){sc.classList.add('out');setTimeout(()=>{sc.remove()},170)}return}
+ if(old||sc)return;
+ const I=p=>`<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`,D='<path d="M12 21l-3.5-5V11.5L10 10h4l1.5 1.5V16z"/><path d="M9.5 9.5C8.5 7 6.5 6 4 6M7.4 8L6.2 4.5M14.5 9.5C15.5 7 17.5 6 20 6M16.6 8l1.2-3.5"/>',
+ H=[[-1,9],[14.5,9],[7,3]].map(([x,y])=>`<g transform="translate(${x} ${y}) scale(.56)">${D.replace(/<path /g,'<path vector-effect="non-scaling-stroke" ')}</g>`).join(''),
+ A='<circle cx="12" cy="12" r="7"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="1" fill="currentColor"/>';
+ document.body.insertAdjacentHTML('beforeend',`<div class="mxfs"></div><div class="mxmn"><button data-mxa="ab" style="--x:0px;--y:-86px" title="Añadir individuo" aria-label="Añadir individuo">${I(D)}</button><button data-mxa="wb" style="--x:-61px;--y:-61px" title="Registrar extracción" aria-label="Registrar extracción">${I(A)}</button><button data-mxa="ah" style="--x:-86px;--y:0px" title="Añadir manada" aria-label="Añadir manada">${I(H)}</button></div>`)}
+function mxFull(tid){const c=$(tid)&&$(tid).closest('.c');if(!c)return;mxFullX();c.classList.add('mxfull');const h=c.querySelector('h2');c.insertAdjacentHTML('afterbegin',`<div class="mxfh"><b>${esc(h?h.textContent:'')}</b><button data-mxfx>✕ Cerrar</button></div>`);document.documentElement.classList.add('vlock');c.scrollTop=0}
+function mxFullX(){const c=document.querySelector('.c.mxfull');if(!c)return;c.classList.remove('mxfull');const h=c.querySelector(':scope>.mxfh');if(h)h.remove();if(!document.querySelector('.mxsh'))document.documentElement.classList.remove('vlock')}
 function mxCb(on){return`<span class="mxc${on?' on':''}">${on?'✓':''}</span>`}
 function mxRow(d,sel){const on=MXSEL.x.ids.has(d.id),tc=d.ty=='Descaste'?'d':d.ty=='Trofeo'?'t':'',ok=d.ok.includes('✅')?'✅':d.ok.includes('⚠')?'⚠':'';
- return`<div class="mxr${on?' on':''}" data-mxi="${esc(d.id)}" data-mxk="x">${sel?mxCb(on):''}<div class="mxb"><div class="mx1"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.m)}</span><span class="mxt ${tc}">${esc(d.ty)}</span><span class="mxs"${d.bad?' title="La especie no coincide con la de la manada"':''}>${esc(d.sp)}${d.bad?' ⚠':''}</span><span class="mxd">${esc(d.f)}</span></div><div class="mx2"><span>${mxSx(d.sxr)} ${esc(d.ed)}</span><span class="stc">${d.st}</span><span class="mxg">${esc(d.ge)}</span><span class="mxe">${esc(d.sec)}</span><span>${ok}</span><span class="mxn" data-mxn="${esc(d.nt)}" title="${esc(d.nt)}">${d.nt?'📝':''}</span></div></div></div>`}
+ return`<div class="mxr${on?' on':''}" data-mxi="${esc(d.id)}" data-mxk="x">${sel?mxCb(on):''}<div class="mxb"><div class="mx1"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.m)}</span><span class="mxt ${tc}">${esc(d.ty)}</span><span class="mxs"${d.bad?' title="La especie no coincide con la de la manada"':''}>${esc(d.sp)}${d.bad?' ⚠':''}</span><span class="mxd">${esc(d.f)}</span></div><div class="mx2"><span>${mxSx(d.sxr)} ${esc(d.ed)}</span><span class="stc">${d.st}</span><span class="mxg">${mxInt(d.ge)}</span><span class="mxe">${esc(d.sec)}</span><span>${ok}</span><span class="mxn" data-mxn="${esc(d.nt)}" title="${esc(d.nt)}">${d.nt?'📝':''}</span></div></div></div>`}
 function maRow(d,sel,pre){const on=MXSEL.a.ids.has(d.id);
- return`<div class="mxr${on?' on':''}" data-mxi="${esc(d.id)}" data-mxk="a">${sel?mxCb(on):''}<div class="mxb"><div class="ma"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.h.slice((pre||'').length))}</span><span>${mxSx(d.sxr)} ${esc(d.ed)}</span><span class="stc">${d.st}</span><span class="mxes">${d.es}</span><span class="mxn" data-mxn="${esc(d.nt)}" title="${esc(d.nt)}">${d.nt?'📝':''}</span></div></div></div>`}
-function mxPaint(k,tid,dataFn,rowFn,lbl){const tb=$(tid);if(!tb)return;let m=$(tid+'m');if(!m){m=document.createElement('div');m.id=tid+'m';tb.parentElement.after(m)}
- const all=dataFn(tb),q=MXSEL[k],ids=new Set(all.map(d=>d.id));[...q.ids].forEach(z=>{if(!ids.has(z))q.ids.delete(z)});const n=q.ids.size,pre=k=='a'?mxPre(all.map(d=>d.h)):'',
- bar=q.on?`<div class="mxa"><button class="mxi" data-mxx="${k}" title="Salir de la selección" aria-label="Salir de la selección">✕</button><b>${n} seleccionada${n==1?'':'s'}</b><button class="mxi" data-mxe="${k}" ${n==1?'':'disabled'} title="Editar" aria-label="Editar">✎</button><button class="mxi del" data-mxd="${k}" ${n?'':'disabled'} title="Eliminar" aria-label="Eliminar">🗑</button></div>`:`<div class="mxa"><button class="mxs2" data-mxs="${k}">☐ Seleccionar</button><span class="hint">${all.length} ${lbl}</span></div>`;
- m.innerHTML=bar+'<div class="mxl">'+all.slice(0,LIM).map(d=>rowFn(d,q.on,pre)).join('')+'</div>'+(all.length>LIM?`<button class="vl" data-all="${tid}">Ver todas (${all.length})</button>`:'')}
+ return`<div class="mxr${on?' on':''}" data-mxi="${esc(d.id)}" data-mxk="a">${sel?mxCb(on):''}<div class="mxb"><div class="mx1"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.h.slice((pre||'').length))}</span><span class="mxes">${d.es}</span><span class="mxs"></span><span class="mxn" data-mxn="${esc(d.nt)}" title="${esc(d.nt)}">${d.nt?'📝':''}</span></div><div class="mx2a"><span>${mxSx(d.sxr)} ${esc(d.ed)}</span><span class="stc">${d.st}</span></div></div></div>`}
+function mxBar(k,n,tot,lbl,tid){const q=MXSEL[k];return q.on?`<div class="mxa"><button class="mxi" data-mxx="${k}" title="Salir de la selección" aria-label="Salir de la selección">✕</button><b>${n} seleccionada${n==1?'':'s'}</b><button class="mxi" data-mxe="${k}" ${n==1?'':'disabled'} title="Editar" aria-label="Editar">✎</button><button class="mxi del" data-mxd="${k}" ${n?'':'disabled'} title="Eliminar" aria-label="Eliminar">🗑</button></div>`:`<div class="mxa"><button class="mxs2" data-mxs="${k}">☐ Seleccionar</button><span class="hint">${tot} ${lbl}</span>${tid?`<button class="mxvt" data-mxfull="${tid}" title="Ver tabla" aria-label="Ver tabla">▦ Ver tabla</button>`:''}</div>`}
+function mxPaint(k,tid,dataFn,rowFn,lbl){const tb=$(tid);if(!tb)return;mxWrap();mxFab();let m=$(tid+'m');if(!m){m=document.createElement('div');m.id=tid+'m';tb.parentElement.after(m)}
+ const all=dataFn(tb),q=MXSEL[k],ids=new Set(all.map(d=>d.id));[...q.ids].forEach(z=>{if(!ids.has(z))q.ids.delete(z)});const pre=k=='a'?mxPre(all.map(d=>d.h)):'';
+ m.innerHTML=mxBar(k,q.ids.size,all.length,lbl,tid)+'<div class="mxl mxs6 k'+k+'">'+all.map(d=>rowFn(d,q.on,pre)).join('')+'</div>'}
+function mxModalHtml(t){if(t=='tm'){const dd=mmData($('tm'));return'<div class="mxl">'+dd.map(mmRow).join('')+'</div>'}const k=t=='tx'?'x':'a',dd=(k=='x'?mxData:maData)($(t)),q=MXSEL[k],pre=k=='a'?mxPre(dd.map(d=>d.h)):'';return mxBar(k,q.ids.size,dd.length,k=='x'?'extracciones':'animales')+'<div class="mxl">'+dd.map(d=>(k=='x'?mxRow:maRow)(d,q.on,pre)).join('')+'</div>'}
+function mxModalRefresh(){if(!VAO)return;const b=document.querySelector('#va .vab');if(!b)return;const y=b.scrollTop;b.innerHTML=mxModalHtml(VAO);b.scrollTop=y}
+function mmData(tb){const o=[];for(let r=1;r<tb.rows.length;r++){const c=tb.rows[r].cells;if(c.length<9||!c[8].querySelector('[data-mfe]'))continue;o.push({id:c[0].getAttribute('data-open'),idh:c[0].innerHTML,sp:c[1].textContent,sec:c[2].textContent,n:c[3].textContent,gt:c[4].getAttribute('title')||'',gh:c[4].innerHTML,al:c[6].innerHTML,cu:c[7].innerHTML,ac:c[8].innerHTML})}return o}
+function mmGv(t){const p=/Probable (\d+)[–-](\d+)/.exec(t);if(!p)return'<span class="mxe">Sin dato de genética</span>';const l=+p[1],h=+p[2],hi=Math.round(CFG.gHigh*100),k=l>=hi?'ok':h<hi?'no':'qu',v=k=='ok'?'Alta':k=='no'?'No llega a alta':'Sin confirmar';return`<b>${l}–${h} %</b><small class="${k}">${v}</small>`}
+function mmComp(id){try{const c=ch.c1.data,i=c.labels.indexOf(id);if(i<0)return null;return c.datasets.map(z=>({l:z.label,c:z.backgroundColor,n:+z.data[i]||0}))}catch(e){return null}}
+function mmCp(id,n){const a=mmComp(id);if(!a)return`<b>${esc(n)} animales</b>`;const t=a.reduce((p,q)=>p+q.n,0);if(!t)return`<b>${esc(n)} animales</b><span class="mxe">Sin composición</span>`;const z=a.filter(q=>q.n);return`<b>${t} animales</b><div class="cpb">${z.map(q=>`<i style="flex:${q.n};background:${q.c}" title="${esc(q.l)}: ${q.n}"></i>`).join('')}</div><div class="cpl">${z.map(q=>`<span title="${esc(q.l)}"><i style="background:${q.c}"></i>${esc((q.l.match(/^\S+/)||[''])[0])} ${q.n}</span>`).join('')}</div>`}
+function mmRow(d){return`<div class="mxr mmr" data-mm="${esc(d.id)}"><div class="mxb mmb"><div class="mmh"><span class="mmid" data-open="${esc(d.id)}">${d.idh}</span><span class="mmal">${d.al}</span></div><div class="mmtx"><b>${esc(d.sp)}</b><span>${esc(d.sec)}</span></div><div class="mmcp">${mmCp(d.id,d.n)}</div><div class="mmbg"><div class="mmbell" title="${esc(d.gt)}">${d.gh}</div><div class="mmgv">${mmGv(d.gt)}</div></div><span class="mmcu">${d.cu}</span><span class="mmac">${d.ac}</span></div></div>`}
+function mmRender(){const tb=$('tm');if(!tb)return;let m=$('tmm');if(!m){m=document.createElement('div');m.id='tmm';tb.parentElement.after(m)}const all=mmData(tb);m.innerHTML=`<div class="mxa"><span class="hint">${all.length} manadas</span><button class="mxvt" data-mxfull="tm" title="Ver tabla" aria-label="Ver tabla">▦ Ver tabla</button></div><div class="mxl mxs6 km">`+all.map(mmRow).join('')+'</div>'}
 function mxRender(){mxPaint('x','tx',mxData,mxRow,'extracciones')}
 function maRender(){mxPaint('a','ta',maData,maRow,'animales')}
-function mxAll(){mxRender();maRender()}
-function mxClose(){document.querySelectorAll('.mxsc,.mxsh').forEach(x=>x.remove());if(!VAO)document.documentElement.classList.remove('vlock')}
+function mxAll(){mxRender();maRender();mxModalRefresh()}
+function mxClose(){document.querySelectorAll('.mxsc,.mxsh').forEach(x=>x.remove());if(!VAO&&!document.querySelector('.c.mxfull'))document.documentElement.classList.remove('vlock')}
 function mxPop(b){document.querySelectorAll('.mxpop').forEach(x=>x.remove());const tx=b.dataset.mxn;if(!tx)return;const r=b.getBoundingClientRect(),p=document.createElement('div');p.className='mxpop';p.textContent=tx;document.body.appendChild(p);p.style.top=Math.min(innerHeight-70,r.bottom+6)+'px';setTimeout(()=>p.remove(),4000)}
 function mxDel(k,ids){const n=ids.size;if(!n)return;mxClose();snap();GT=true;if(k=='x')S.x=S.x.filter(q=>!ids.has(q.id));else{bk(n==1?'Animal eliminado':'Animales eliminados');S.a=S.a.filter(q=>!ids.has(q.id))}const q=MXSEL[k];q.on=false;q.ids.clear();sv();render();toast(n+(k=='x'?(n==1?' extracción eliminada':' extracciones eliminadas'):(n==1?' animal eliminado':' animales eliminados')))}
 function mxSheet(k,id){mxClose();let h='';
- if(k=='x'){const d=mxData($('tx')).find(z=>z.id===id);if(!d)return;const tc=d.ty=='Descaste'?'d':d.ty=='Trofeo'?'t':'';
-  h=`<div class="mx1 mxh"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.m)}${d.mo?' ›':''}</span><span class="mxt ${tc}">${esc(d.ty)}</span><span class="mxd">${esc(d.f)}</span></div><div class="mxk">${mxkv('Especie',esc(d.sp)+(d.bad?' ⚠':''))}${mxkv('Sexo · edad',mxSx(d.sxr)+' '+esc(d.ed))}${mxkv('Estrellas · genética real','<span class="stc">'+d.st+'</span> '+esc(d.ge))}${mxkv('Acierto',esc(d.ok))}${mxkv('Sector',esc(d.sec),1)}${d.nt?mxkv('Nota',esc(d.nt),1):''}</div><div class="mxbt"><button class="mxb1" data-mxfe="${esc(id)}">✎ Editar</button><button class="mxb1 del" data-mxfd="${esc(id)}">🗑 Borrar</button></div>`}
- else{const d=maData($('ta')).find(z=>z.id===id);if(!d)return;
-  const bt=[...d.acts.querySelectorAll('button')].map(b=>`<button class="mxb1${b.classList.contains('bd')?' del':''}" ${[...b.attributes].filter(a=>a.name.startsWith('data-')).map(a=>`${a.name}="${esc(a.value)}"`).join(' ')}>${esc(b.textContent)} ${esc(b.title.split(' · ')[0])}</button>`).join('');
-  h=`<div class="mx1 mxh"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.h)}${d.mo?' ›':''}</span>${d.es}</div><div class="mxk">${mxkv('Sexo · edad',mxSx(d.sxr)+' '+esc(d.ed))}${mxkv('Estrellas','<span class="stc">'+d.st+'</span>')}${d.nt?mxkv('Nota',esc(d.nt),1):''}</div><div class="mxbt mxw">${bt}</div>`}
+ if(k=='x'){const d=mxData($('tx')).find(z=>z.id===id);if(!d)return;const tc=d.ty=='Descaste'?'d':d.ty=='Trofeo'?'t':'',sci=mxSci(d.sp);
+  h=`<div class="mx1 mxh"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.m)}${d.mo?' ›':''}</span><span class="mxt ${tc}">${esc(d.ty)}</span><span class="mxd">${esc(d.f)}</span></div><div class="mxsp"><b>${esc(d.sp)}</b>${sci?`<i>${esc(sci)}</i>`:''}${d.bad?' <em>⚠ no coincide con la especie de la manada</em>':''}</div>`+
+  mxsec('Ejemplar','<div class="mxk">'+mxkv('Sexo · edad',mxSx(d.sxr)+' '+esc(d.ed))+mxkv('Estrellas','<span class="stc">'+d.st+'</span>')+mxkv('Genética real',mxInt(d.ge))+mxkv('Acierto',esc(d.ok))+'</div>')+
+  mxsec('Ubicación','<div class="mxk">'+mxkv('Sector',esc(d.sec),1)+'</div>')+(d.nt?mxsec('Notas',`<div class="mxnt">${esc(d.nt)}</div>`):'')+mxsec('Impacto en la manada (estimación)',mxImp(d))+
+  `<div class="mxbt"><button class="mxb1" data-mxfe="${esc(id)}" title="Editar" aria-label="Editar">✎</button><button class="mxb1 del" data-mxfd="${esc(id)}" title="Borrar" aria-label="Borrar">🗑</button></div>`}
+ else{const d=maData($('ta')).find(z=>z.id===id);if(!d)return;const hh=S.h.find(z=>z.id===d.mo||z.id===d.h),sp=hh?hh.sp:'',sci=mxSci(sp),n=S.a.filter(a=>hh&&a.h===hh.id).length;
+  const bt=[...d.acts.querySelectorAll('button')].map(b=>`<button class="mxb1${b.classList.contains('bd')?' del':''}" ${[...b.attributes].filter(a=>a.name.startsWith('data-')).map(a=>`${a.name}="${esc(a.value)}"`).join(' ')} title="${esc(b.title)}" aria-label="${esc(b.title.split(' · ')[0])}">${esc(b.textContent)}</button>`).join('');
+  h=`<div class="mx1 mxh"><span class="mxm"${d.mo?` data-open="${esc(d.mo)}"`:''}>${esc(d.h)}${d.mo?' ›':''}</span><span class="mxes">${d.es}</span></div>`+(sp?`<div class="mxsp"><b>${esc(sp)}</b>${sci?`<i>${esc(sci)}</i>`:''}</div>`:'')+
+  mxsec('Ejemplar','<div class="mxk">'+mxkv('Sexo · edad',mxSx(d.sxr)+' '+esc(d.ed))+mxkv('Estrellas','<span class="stc">'+d.st+'</span>')+(hh?mxkv('Animales en su manada',n):'')+'</div>')+(d.nt?mxsec('Notas',`<div class="mxnt">${esc(d.nt)}</div>`):'')+mxsec('Acciones',`<div class="mxbt mxw">${bt}</div>`)}
  document.body.insertAdjacentHTML('beforeend',`<div class="mxsc"></div><div class="mxsh" role="dialog" aria-modal="true"><button class="mxcl" data-mxfc aria-label="Cerrar">✕</button>${h}</div>`);document.documentElement.classList.add('vlock')}
 document.addEventListener('click',e=>{const t=e.target;let b;
+ if(t.closest('#mxfab')){mxMenu(!document.querySelector('.mxmn'));return}
+ if(b=t.closest('[data-mxa]')){mxMenu(false);const x=$(b.dataset.mxa);if(x)x.click();return}
+ if(t.classList.contains('mxfs')){mxMenu(false);return}
+ if(b=t.closest('[data-mxfull]')){mxFull(b.dataset.mxfull);return}
+ if(t.closest('[data-mxfx]')){mxFullX();return}
  if(!t.closest('[data-mxn]'))document.querySelectorAll('.mxpop').forEach(x=>x.remove());
+ if(t.id=='fa'||t.closest('[data-aclose]')){aaClose();return}
  if(b=t.closest('[data-mxs]')){const q=MXSEL[b.dataset.mxs];q.on=true;q.ids.clear();mxAll();return}
  if(b=t.closest('[data-mxx]')){const q=MXSEL[b.dataset.mxx];q.on=false;q.ids.clear();mxAll();return}
- if(b=t.closest('[data-mxe]')){const k=b.dataset.mxe,q=MXSEL[k],i=(k=='x'?S.x:S.a).findIndex(z=>z.id===[...q.ids][0]);if(i>=0){q.on=false;q.ids.clear();mxAll();k=='x'?fpEdit(i):eaDlg(i)}return}
+ if(b=t.closest('[data-mxe]')){const k=b.dataset.mxe,q=MXSEL[k],i=(k=='x'?S.x:S.a).findIndex(z=>z.id===[...q.ids][0]);if(i>=0){q.on=false;q.ids.clear();mxAll();if(VAO)closeAll();k=='x'?fpEdit(i):eaDlg(i)}return}
  if(b=t.closest('[data-mxd]')){mxDel(b.dataset.mxd,new Set(MXSEL[b.dataset.mxd].ids));return}
  if(b=t.closest('[data-mxn]')){mxPop(b);return}
  if(t.closest('[data-mxfc]')||t.classList.contains('mxsc')){mxClose();return}
- if(b=t.closest('[data-mxfe]')){const i=S.x.findIndex(z=>z.id===b.dataset.mxfe);mxClose();if(i>=0)fpEdit(i);return}
+ if(b=t.closest('[data-mxfe]')){const i=S.x.findIndex(z=>z.id===b.dataset.mxfe);mxClose();if(VAO)closeAll();if(i>=0)fpEdit(i);return}
  if(b=t.closest('[data-mxfd]')){mxDel('x',new Set([b.dataset.mxfd]));return}
  if(t.closest('.mxsh .mxb1,.mxsh [data-open]')){setTimeout(mxClose,0);return}
+ if(b=t.closest('[data-mm]')){if(!t.closest('button,[data-open]')){const el=document.querySelector('#tm td[data-open="'+b.dataset.mm.replace(/"/g,'')+'"]');if(el)el.click()}return}
  const r=t.closest('[data-mxi]');if(!r||t.closest('[data-open]'))return;const k=r.dataset.mxk,id=r.dataset.mxi,q=MXSEL[k];
- if(q.on&&!r.closest('#va')){q.ids.has(id)?q.ids.delete(id):q.ids.add(id);mxAll();return}
+ if(q.on){q.ids.has(id)?q.ids.delete(id):q.ids.add(id);mxAll();return}
  mxSheet(k,id)});
+(function(){let y0=0;const lim=l=>({t:l.scrollTop<=0,e:l.scrollTop+l.clientHeight>=l.scrollHeight-1});
+document.addEventListener('touchstart',e=>{if(e.target.closest('.mxs6'))y0=e.touches[0].clientY},{passive:true});
+document.addEventListener('touchmove',e=>{const l=e.target.closest('.mxs6');if(!l||document.querySelector('.c.mxfull'))return;const y=e.touches[0].clientY,d=y0-y,b=lim(l);if((d>0&&b.e)||(d<0&&b.t)){window.scrollBy(0,d);y0=y;e.preventDefault()}else y0=y},{passive:false});
+document.addEventListener('wheel',e=>{const l=e.target.closest('.mxs6');if(!l||document.querySelector('.c.mxfull'))return;const b=lim(l);if((e.deltaY>0&&b.e)||(e.deltaY<0&&b.t)){window.scrollBy(0,e.deltaY);e.preventDefault()}},{passive:false})})();
+document.addEventListener('keydown',e=>{if(e.key=='Escape'){const fa=$('fa');if(fa&&!fa.hidden){aaClose();return}if(document.querySelector('.mxsh'))mxClose();else mxFullX()}});
 /* ---------- eventos ---------- */
 document.addEventListener('click',e=>{const t=e.target,b=t.closest('button'),d=b?b.dataset:{};
  if(!b){const op=t.closest('[data-open]');if(op){const k=t.closest('[data-k]');openP(op.dataset.open,k?k.dataset.k:null);return}
@@ -962,7 +1180,7 @@ document.addEventListener('input',e=>{const t=e.target;if(t.id=='pn')nota=t.valu
 document.addEventListener('keydown',e=>{if(e.key=='Escape'){if(!$('st').hidden){$('st').hidden=true;return}if(!$('hl').hidden){$('hl').hidden=true;return}if(w){w=null;fp()}else if(OP){OP=null;render()}}});
 ['mE','mR','mQ','aM','aS','aE','aT','aA','xM','xT','xA','xD','fs'].forEach(i=>{$(i).onchange=render;$(i).oninput=render});
 $('mp').onchange=e=>{S.act=e.target.value;q={};OP=null;w=null;fp();sv();render()};
-$('ah').onclick=()=>mfDlg(null);$('ab').onclick=()=>{$('na').hidden=!$('na').hidden};
+$('ah').onclick=()=>mfDlg(null);$('ab').onclick=()=>aaOpen();
 $('wb').onclick=()=>fpOpen({});
 $('mS').onchange=e=>{const k=e.target.value;MS={k,a:MA[k]};render()};$('mD').onclick=()=>{MS.a=MS.a?0:1;render()};
 $('hb').onclick=()=>{$('hl').hidden=!$('hl').hidden;if(!$('hl').hidden)$('hl').scrollTop=0};
