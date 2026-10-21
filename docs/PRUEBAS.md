@@ -16,7 +16,9 @@ Distinguir siempre: **implementado / probado / pendiente de prueba real**. Solo 
 - [ ] Botón de la tabla de extracciones «+ Registrar extracción» y botón flotante coherentes.
 - [ ] Extracciones y Animales en iPhone: filas compactas sin saltos de línea ni cortes.
 - [ ] Manadas: curva ampliada correcta en ancho y estrecho; porcentajes legibles.
+- [ ] Manadas: etiquetas de alerta completas (pasan a la línea siguiente si no caben), en todos los anchos.
 - [ ] Ficha de animal suelto con iconos en los botones.
+- [ ] Indicador de sincronización: «Sincronizado» desaparece a los 4 s; los avisos que piden acción se mantienen.
 
-## Resultado de la 1.1 (20-oct-2026)
-Checklist de f5t probada por el autor: todo correcto. Observaciones aplicadas en 1.1.0: criterio único de símbolos en ventanas, nombre del botón de la tabla y +1 pt en los porcentajes de la curva. Estos tres ajustes y la retirada de Barlow quedan pendientes de prueba real.
+## Resultado de la 1.1.0 (21-oct-2026)
+Checklist completa probada por el autor: todo correcto, incluidos los ajustes finales de f5u y f5v. Versión aprobada y publicada (caché `woth-1.1.0-f5v`).

@@ -2,12 +2,12 @@
 
 Herramienta de gestión de manadas y descastes para *Way of the Hunter* (mapas, años biológicos, extracciones, genética estimada). Una sola página web que funciona como app instalable (PWA), con datos locales y sincronización opcional con Supabase.
 
-**Versión 1.1.0** · caché `woth-1.1.0` · App: https://control-de-poblaciones-woth.raulmm87.workers.dev/
+**Versión 1.1.0 (cerrada)** · caché `woth-1.1.0-f5v` · App: https://control-de-poblaciones-woth.raulmm87.workers.dev/
 
 ## Estado
-- **Probado:** F0–F4 (datos locales, PWA, nube, sincronización, pruebas reales en portátil, iPhone 13 Pro e iPad 10 con Chrome), interfaz F5 y armonización visual hasta f5t.
-- **Implementado, pendiente de prueba real:** los ajustes finales de 1.1.0 (símbolos de ventanas, botón «Registrar extracción», porcentajes de la curva, retirada de Barlow).
-- Pendientes menores: ver el final de `CHANGELOG.md`.
+- **Probado por el autor:** F0–F4 (datos locales, PWA, nube, sincronización, pruebas reales en portátil, iPhone 13 Pro e iPad 10 con Chrome), interfaz F5 y armonización visual completa hasta f5v. La 1.1.0 está aprobada y publicada.
+- **Pendiente menor:** ver el final de `CHANGELOG.md`.
+- **Siguiente línea de trabajo:** llevar la herramienta de simulador a utilidad real de gestión cinegética. Análisis inicial en `docs/VIDA_REAL.md` (sin decisiones tomadas).
 
 ## Estructura del repositorio
 ```
@@ -26,6 +26,7 @@ docs/
   ESTILO.md                 Manual de estilo: colores, botones, escalas, componentes
   DESPLIEGUE.md             Cómo publicar, versiones, copias, incidencias y mantenimiento
   PRUEBAS.md                Checklists de prueba por dispositivo
+  VIDA_REAL.md              Análisis para llevar la herramienta a la gestión cinegética real
 ```
 
 ## Documentación
@@ -37,6 +38,7 @@ docs/
 | Añadir algo respetando el diseño | `docs/ESTILO.md` |
 | Publicar una versión | `docs/DESPLIEGUE.md` |
 | Probar antes de publicar | `docs/PRUEBAS.md` |
+| Pensar el salto a la vida real | `docs/VIDA_REAL.md` |
 
 ## Reglas de trabajo (leer al empezar cada chat)
 - Conservar funciones, diseño y lógica actuales; cambios pequeños y verificables. Distinguir siempre **implementado / probado / pendiente de prueba real**. Solo se comprueba sintaxis con `node --check`.

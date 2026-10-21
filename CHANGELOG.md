@@ -6,8 +6,8 @@ Fuentes: historial de commits, README previo y registro de las conversaciones de
 
 ---
 
-## 1.1.0 · 20-oct-2026 · caché `woth-1.1.0`
-Armonización visual con el manual de estilo (`docs/ESTILO.md`) y retoques de la vista de listas. Incluye las pruebas internas f5r → f5u.
+## 1.1.0 · 20–21 oct 2026 · caché `woth-1.1.0-f5v` · CERRADA
+Armonización visual con el manual de estilo (`docs/ESTILO.md`) y retoques de la vista de listas. Aprobada y publicada por el autor el 21-oct. Incluye las pruebas internas f5r → f5v; la caché publicada conserva el sufijo de la última prueba.
 
 **f5r** (probado)
 - Ventana «Nuevo animal» con el mismo fondo «musgo» y botones que las ventanas de pieza y manada (antes salía blanca o con el color del sistema).
@@ -24,12 +24,15 @@ Armonización visual con el manual de estilo (`docs/ESTILO.md`) y retoques de la
 - Colores casi duplicados unificados (crema #f3ecdc, rojo oscuro #8f2f0d, texto oscuro #1d2a23). Musgo de ventanas como token `--moss`.
 - Capas (z-index) conservadas tal cual por el orden entre ventanas.
 
-**f5u / 1.1.0** (implementado, pendiente de prueba real)
+**f5u** (probado)
 - Las ventanas «Nuevo animal», «Nueva pieza» y «Nueva manada» ya no llevan emoticono en el título (criterio único: ninguna lleva símbolo).
 - El botón de la tabla «+ Agregar pieza (ficha de caza)» pasa a «+ Registrar extracción», igual que el botón flotante; actualizado también el texto de la ayuda.
 - Porcentajes de la curva de Manadas un punto más grandes.
 - Se quita «Barlow Condensed» de las pilas tipográficas (no estaba incrustada; caía a Oswald).
-- Caché de `sw.js`: `woth-1.1.0`.
+
+**f5v** (probado)
+- El indicador de sincronización se oculta solo a los 4 s cuando está en «Sincronizado». Los estados que piden acción (sin subir, sin conexión, conflicto) se mantienen visibles.
+- Etiquetas de alerta de las filas de Manadas: si no caben junto al ID pasan a la línea siguiente en vez de cortarse.
 
 ---
 
@@ -83,3 +86,5 @@ Partiendo de F4. Detalle por pruebas internas f5a → f5q; los commits no conser
 - Revisar que no queden rutas de borrado por posición (usar IDs internos).
 - Decidir si se cambia la dirección web (hoy `workers.dev`). Cada dirección tiene su propio almacenamiento: migrar con Exportar → Importar.
 - Comprobar si una consulta sin sesión cuenta como actividad para Supabase (el ping semanal está creado).
+- Opcional: unificar el verde de las fichas (#1f3d2e) con el musgo de las ventanas (#1d2a21); cambiaría el aspecto de las fichas.
+- Siguiente línea: llevar la herramienta a gestión cinegética real (`docs/VIDA_REAL.md`).
