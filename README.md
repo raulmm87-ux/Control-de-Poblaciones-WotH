@@ -2,10 +2,11 @@
 
 Herramienta de gestión de manadas y descastes para *Way of the Hunter* (mapas, años biológicos, extracciones, genética estimada). Una sola página web que funciona como app instalable (PWA), con datos locales y sincronización opcional con Supabase.
 
-**Versión 1.1.0 (cerrada)** · caché `woth-1.1.0-f5v` · App: https://control-de-poblaciones-woth.raulmm87.workers.dev/
+**Versión 1.1.0 (cerrada)** · caché `woth-1.1.0-f5v` · App: https://manadas.copalab.workers.dev/
 
 ## Estado
 - **Probado por el autor:** F0–F4 (datos locales, PWA, nube, sincronización, pruebas reales en portátil, iPhone 13 Pro e iPad 10 con Chrome), interfaz F5 y armonización visual completa hasta f5v. La 1.1.0 está aprobada y publicada.
+- **Dirección web:** desde el 21-oct-2026 la app vive en `manadas.copalab.workers.dev` (antes `control-de-poblaciones-woth.raulmm87.workers.dev`). Ver `docs/DESPLIEGUE.md`.
 - **Pendiente menor:** ver el final de `CHANGELOG.md`.
 - **Siguiente línea de trabajo:** llevar la herramienta de simulador a utilidad real de gestión cinegética. Análisis inicial en `docs/VIDA_REAL.md` (sin decisiones tomadas).
 
@@ -16,7 +17,7 @@ supabase.js                 Librería @supabase/supabase-js (copia local)
 sw.js                       Service worker (el nombre de CACHE es la versión)
 manifest.webmanifest        Instalación como app
 icons/                      Iconos de la app
-_headers  wrangler.jsonc    Configuración de Cloudflare
+_headers  wrangler.jsonc    Configuración de Cloudflare (el name debe coincidir con el Worker)
 .assetsignore               Lo que NO se publica (README, CHANGELOG, docs, .github…)
 .github/workflows/          Ping a Supabase contra la pausa por inactividad
 CHANGELOG.md                Registro de modificaciones por versión
@@ -24,7 +25,7 @@ docs/
   ARQUITECTURA.md           Cómo está hecha la app, datos, nube, service worker
   REGLAS_Y_DECISIONES.md    Reglas de descaste, genética, IDs y decisiones de producto
   ESTILO.md                 Manual de estilo: colores, botones, escalas, componentes
-  DESPLIEGUE.md             Cómo publicar, versiones, copias, incidencias y mantenimiento
+  DESPLIEGUE.md             Cómo publicar, versiones, dirección web, copias, incidencias y mantenimiento
   PRUEBAS.md                Checklists de prueba por dispositivo
   VIDA_REAL.md              Análisis para llevar la herramienta a la gestión cinegética real
 ```
@@ -36,7 +37,7 @@ docs/
 | Entender cómo funciona por dentro | `docs/ARQUITECTURA.md` |
 | Conocer las reglas del juego aplicadas | `docs/REGLAS_Y_DECISIONES.md` |
 | Añadir algo respetando el diseño | `docs/ESTILO.md` |
-| Publicar una versión | `docs/DESPLIEGUE.md` |
+| Publicar una versión o cambiar la dirección | `docs/DESPLIEGUE.md` |
 | Probar antes de publicar | `docs/PRUEBAS.md` |
 | Pensar el salto a la vida real | `docs/VIDA_REAL.md` |
 
@@ -47,7 +48,7 @@ docs/
 - **Nunca sustituciones de texto globales dentro de `index.html`** (se corrompió una vez la fuente incrustada). Cambios con anclas únicas y comprobaciones. No leer `index.html` entero: descargarlo y trabajar por secciones.
 - Todo elemento nuevo sigue `docs/ESTILO.md`: tokens, escalas y componentes existentes.
 - Máximo una pregunta por turno. El archivo de cambios de cada versión se actualiza al final, cuando el autor aprueba la versión.
-- El conector de GitHub de Claude escribe archivos pequeños (README, CHANGELOG, `docs/`, `sw.js`, `.assetsignore`), pero no `index.html` ni `.github/workflows` (se suben a mano).
+- El conector de GitHub de Claude escribe archivos pequeños (README, CHANGELOG, `docs/`, `sw.js`, `wrangler.jsonc`, `.assetsignore`), pero no `index.html` ni `.github/workflows` (se suben a mano).
 
 ## Despliegue
 GitHub (`main`) → Cloudflare, sin compilación. Cada subida a `main` publica sola. Al publicar, subir el nombre de `CACHE` en `sw.js` y subir `index.html` y `sw.js` a la vez. Detalle en `docs/DESPLIEGUE.md`.
