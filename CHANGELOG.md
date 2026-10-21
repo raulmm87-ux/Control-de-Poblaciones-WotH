@@ -6,6 +6,14 @@ Fuentes: historial de commits, README previo y registro de las conversaciones de
 
 ---
 
+## Infraestructura · 21-oct-2026 · nueva dirección web
+Sin cambios de código ni de caché (sigue `woth-1.1.0-f5v`).
+- La app pasa de `control-de-poblaciones-woth.raulmm87.workers.dev` a **https://manadas.copalab.workers.dev/** (Worker `manadas`, subdominio de cuenta `copalab`). Cambio hecho por el autor en el panel de Cloudflare y comprobado: la dirección nueva sirve la versión 1.1.0.
+- `wrangler.jsonc`: `name` pasa a `manadas` para coincidir con el Worker. README y `docs/DESPLIEGUE.md` actualizados (nueva sección «Dirección de la app»).
+- Consecuencias: almacenamiento local nuevo en la dirección nueva (migrar con Exportar → Importar o iniciando sesión) y accesos directos a reinstalar en iPhone e iPad.
+
+---
+
 ## 1.1.0 · 20–21 oct 2026 · caché `woth-1.1.0-f5v` · CERRADA
 Armonización visual con el manual de estilo (`docs/ESTILO.md`) y retoques de la vista de listas. Aprobada y publicada por el autor el 21-oct. Incluye las pruebas internas f5r → f5v; la caché publicada conserva el sufijo de la última prueba.
 
@@ -84,7 +92,7 @@ Partiendo de F4. Detalle por pruebas internas f5a → f5q; los commits no conser
 ## Pendiente conocido
 - Validar la lista de nombres científicos y el umbral (±1 punto) del impacto genético en las fichas.
 - Revisar que no queden rutas de borrado por posición (usar IDs internos).
-- Decidir si se cambia la dirección web (hoy `workers.dev`). Cada dirección tiene su propio almacenamiento: migrar con Exportar → Importar.
+- Dirección web: cambiada el 21-oct (ver Infraestructura). Queda borrar el Worker antiguo si aún existe y revisar la URL Configuration de Supabase.
 - Comprobar si una consulta sin sesión cuenta como actividad para Supabase (el ping semanal está creado).
 - Opcional: unificar el verde de las fichas (#1f3d2e) con el musgo de las ventanas (#1d2a21); cambiaría el aspecto de las fichas.
 - Siguiente línea: llevar la herramienta a gestión cinegética real (`docs/VIDA_REAL.md`).
